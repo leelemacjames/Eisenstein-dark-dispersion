@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eisenstein Geometry and the Dark Dispersion Relation</title>
+<title>Eisenstein Geometry and the Dark Mass-Generating Mechanism</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -22,36 +22,21 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { font-size: 18px; scroll-behavior: smooth; }
-
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 400; line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-  }
-
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 400; line-height: 1.75; -webkit-font-smoothing: antialiased; }
   .page { max-width: 740px; margin: 0 auto; padding: 0 32px; }
-
   .title-block { padding: 80px 0 50px; border-bottom: 2px solid var(--ink); margin-bottom: 40px; }
   .journal-line { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 30px; }
   .title-block h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 2rem; line-height: 1.28; color: var(--ink); margin-bottom: 16px; }
   .title-block h1 em { font-style: italic; color: var(--hex); }
   .author-line { font-family: 'Nunito Sans', sans-serif; font-weight: 400; font-size: 0.88rem; color: var(--ink-light); margin-bottom: 6px; }
   .date-line { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 0.78rem; color: var(--ink-dim); }
-
   .abstract { background: var(--hex-light); border-left: 3px solid var(--hex); padding: 24px 28px; margin: 40px 0 40px; border-radius: 0 6px 6px 0; }
-
   .box-label { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
-  .label-accent { color: var(--accent); } .label-hex { color: var(--hex); }
-  .label-blue { color: var(--blue); } .label-gold { color: var(--gold); }
-  .label-dim { color: var(--ink-dim); } .label-warn { color: var(--warn); }
-
+  .label-accent { color: var(--accent); } .label-hex { color: var(--hex); } .label-blue { color: var(--blue); } .label-gold { color: var(--gold); } .label-dim { color: var(--ink-dim); } .label-warn { color: var(--warn); }
   .abstract p, .box-text { font-size: 0.92rem; line-height: 1.7; color: var(--ink-light); margin: 0; }
   .box-text + .box-text { margin-top: 12px; }
-
   .notation-box { background: #f4f2ec; border: 1px solid var(--rule); padding: 20px 24px; margin: 0 0 50px; border-radius: 6px; column-count: 2; column-gap: 32px; }
   .notation-box p { font-size: 0.85rem; line-height: 1.6; margin-bottom: 4px; text-align: left; break-inside: avoid; }
-
   .toc { margin: 0 0 50px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
   .toc-label { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 14px; }
   .toc ol { list-style: none; counter-reset: toc; }
@@ -60,19 +45,17 @@
   .toc a { font-family: 'Source Serif 4', serif; font-size: 0.92rem; color: var(--ink-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .toc a:hover { border-bottom-color: var(--accent); }
   .toc .toc-appendix { counter-increment: none; }
-  .toc .toc-appendix::before { content: "A."; color: var(--ink-dim); }
-
+  .toc .toc-appendix::before { color: var(--ink-dim); }
+  .toc .toc-app-a::before { content: "A."; }
+  .toc .toc-app-b::before { content: "B."; }
   .section { margin-bottom: 44px; }
   h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 1.35rem; color: var(--ink); margin-bottom: 18px; border-top: 1px solid var(--rule); padding-top: 20px; }
   h2 .sec-num, h2 .app-num { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.8rem; margin-right: 10px; }
   h2 .sec-num { color: var(--accent); } h2 .app-num { color: var(--ink-dim); }
   h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-style: italic; font-size: 1.05rem; color: var(--ink); margin-bottom: 12px; margin-top: 28px; }
-
   p { margin-bottom: 16px; text-align: justify; hyphens: auto; }
-
   .eq { display: flex; align-items: center; justify-content: center; margin: 24px 0; padding: 12px 0; position: relative; overflow-x: auto; }
   .eq-num { position: absolute; right: 0; font-family: 'Source Serif 4', serif; font-size: 0.85rem; color: var(--ink-dim); }
-
   .result-box { background: var(--accent-light); border: 1px solid #c0686844; border-left: 3px solid var(--accent); padding: 20px 24px; margin: 28px 0; border-radius: 0 6px 6px 0; }
   .result-box .eq { margin: 12px 0; padding: 8px 0; }
   .hex-box { background: var(--hex-light); border: 1px solid #5a6a3a30; border-left: 3px solid var(--hex); padding: 20px 24px; margin: 28px 0; border-radius: 0 6px 6px 0; }
@@ -80,17 +63,14 @@
   .remark-box { background: var(--blue-light); border: 1px solid #2a4a6a22; border-left: 3px solid var(--blue); padding: 20px 24px; margin: 28px 0; border-radius: 0 6px 6px 0; }
   .gold-box { background: var(--gold-light); border: 1px solid #9a7a3a30; border-left: 3px solid var(--gold); padding: 20px 24px; margin: 28px 0; border-radius: 0 6px 6px 0; }
   .warn-box { background: var(--warn-light); border: 1px solid #8a4a0a30; border-left: 3px solid var(--warn); padding: 20px 24px; margin: 28px 0; border-radius: 0 6px 6px 0; }
-
   .references { margin-top: 50px; padding-top: 24px; border-top: 2px solid var(--ink); }
   .references h2 { border-top: none; padding-top: 0; }
   .ref-item { font-size: 0.88rem; color: var(--ink-light); margin-bottom: 10px; padding-left: 28px; text-indent: -28px; }
   .ref-item a { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); }
   .ref-num { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.78rem; color: var(--accent); margin-right: 6px; }
   a.ref-link { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); }
-
   .footer { margin-top: 60px; padding: 30px 0 60px; border-top: 1px solid var(--rule); text-align: center; }
   .footer p { font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; color: var(--ink-dim); text-align: center; }
-
   @media (max-width: 600px) { html { font-size: 16px; } .page { padding: 0 20px; } .title-block { padding: 40px 0 30px; } .title-block h1 { font-size: 1.5rem; } .notation-box { column-count: 1; } }
 </style>
 </head>
@@ -106,37 +86,18 @@
 
   <div class="abstract">
     <div class="box-label label-hex">Abstract</div>
-    <p>
-      The Sirag large-number coincidence equates $2^{1/\alpha}$, where
-      $\alpha \approx 1/137$ is the fine-structure constant, with the inverse
-      gravitational coupling $\hbar c / G m_p m_e$, up to a residual factor of
-      $\approx 1.74$. We interpret this factor as a structural analogy with the
-      cross-term that appears when an orthogonal quadratic form is replaced by
-      the hexagonal (Eisenstein) norm $X^2 + XY + Y^2$. Applied naively as a
-      free-particle dispersion relation, the cross-term produces a non-relativistic
-      catastrophe: the group velocity acquires a constant $\sim c/2$ correction
-      that is incompatible with cold dark matter structure formation. We resolve
-      this by reinterpreting the Eisenstein geometry as governing the <em>internal</em>
-      dynamics of a confined dark sector, analogous to QCD, rather than the
-      free-particle kinematics of composite dark matter. The hexagonal norm then
-      describes the mass-generating mechanism inside a dark hadron, where
-      constituent momenta are relativistic ($p \sim mc$), while the composite
-      dark matter particle propagates with standard Lorentz-invariant kinematics.
-      The connection to the $A_2$ root lattice of SU(3) links the hexagonal
-      geometry to a dark confining gauge sector and the GeV mass scale inferred
-      from a cosmological geometric mean construction.
-    </p>
+    <p>The Sirag large-number coincidence equates $2^{1/\alpha}$, where $\alpha \approx 1/137$ is the fine-structure constant, with the inverse gravitational coupling $\hbar c / G m_p m_e$, up to a residual factor of $\approx 1.74$. We interpret this factor as a structural analogy with the cross-term that appears when an orthogonal quadratic form is replaced by the hexagonal (Eisenstein) norm $X^2 + XY + Y^2$. Applied naively as a free-particle dispersion relation, the cross-term produces a non-relativistic catastrophe: the group velocity acquires a constant $\sim c/2$ correction incompatible with cold dark matter. We resolve this by reinterpreting the Eisenstein geometry as governing the <em>internal</em> dynamics of a confined dark sector, analogous to QCD. The hexagonal norm describes mass generation inside a dark hadron, where constituent momenta are relativistic ($p \sim mc$), while the composite dark matter particle propagates with standard Lorentz-invariant kinematics. The $A_2$ root lattice of SU(3) provides the geometric link between a dark confining gauge sector and the GeV mass scale inferred from a cosmological geometric mean construction.</p>
   </div>
 
   <div class="notation-box">
     <div class="box-label label-dim">Notation and conventions</div>
-    <p>$\alpha = e^2 / 4\pi\epsilon_0 \hbar c \approx 1/137.036$: fine-structure constant (low-energy, Thomson limit)</p>
+    <p>$\alpha = e^2 / 4\pi\epsilon_0 \hbar c \approx 1/137.036$: fine-structure constant (Thomson limit)</p>
     <p>$m_e, m_p, m_n$: electron, proton, neutron masses</p>
     <p>$G, \hbar, c$: gravitational constant, reduced Planck constant, speed of light</p>
     <p>$m_{\rm Pl} = \sqrt{\hbar c / G}$: Planck mass</p>
     <p>$\Omega_b, \Omega_c$: baryon and cold dark matter density parameters</p>
     <p>$f = \Omega_c / (\Omega_c + \Omega_b) \approx 0.84$: dark fraction of total matter</p>
-    <p>$p = |\vec{p}\,|$: magnitude of 3-momentum (scalar, non-negative)</p>
+    <p>$p = |\vec{p}\,|$: magnitude of 3-momentum (scalar, $\geq 0$)</p>
     <p>$X = pc,\; Y = mc^2$: positive scalar energy-dimensioned variables</p>
   </div>
 
@@ -156,145 +117,108 @@
       <li><a href="#s11">The GeV mass scale from geometric mean construction</a></li>
       <li><a href="#s12">Observational consequences</a></li>
       <li><a href="#s13">Discussion</a></li>
-      <li class="toc-appendix"><a href="#appA">Cosmological abundance justification</a></li>
+      <li class="toc-appendix toc-app-a"><a href="#appA">Cosmological abundance justification</a></li>
+      <li class="toc-appendix toc-app-b"><a href="#appB">Group velocity from a modified dispersion relation</a></li>
     </ol>
   </div>
 
-  <!-- §1 -->
+  <!-- §1–§6: unchanged from previous version -->
   <div class="section" id="s1">
     <h2><span class="sec-num">1</span>The standard relativistic quadratic form</h2>
-    <p>The relativistic dispersion relation follows from the Minkowski norm of the four-momentum. For a particle with $P^\mu = (E/c,\, \vec{p}\,)$, the invariant mass condition is</p>
+    <p>The relativistic dispersion relation follows from the Minkowski norm of the four-momentum. For $P^\mu = (E/c,\, \vec{p}\,)$, the invariant mass condition is</p>
     <div class="eq">$\displaystyle P_\mu P^\mu = m^2 c^2,$<span class="eq-num">(1)</span></div>
     <p>giving</p>
     <div class="eq">$\displaystyle E^2 = p^2 c^2 + m^2 c^4,$<span class="eq-num">(2)</span></div>
-    <p>where $p = |\vec{p}\,|$ throughout. Setting $X = pc$ and $Y = mc^2$, both positive scalars with dimensions of energy,</p>
+    <p>where $p = |\vec{p}\,|$ throughout. Setting $X = pc$ and $Y = mc^2$,</p>
     <div class="eq">$\displaystyle E^2 = X^2 + Y^2.$<span class="eq-num">(3)</span></div>
-    <p>This is the Euclidean norm: the orthogonal quadratic form on two variables. The corresponding lattice is $\mathbb{Z}[i]$, the Gaussian integers. The orthogonality of $X$ and $Y$ reflects Lorentz invariance: momentum energy and rest-mass energy contribute independently.</p>
+    <p>This is the orthogonal quadratic form on two variables. The corresponding lattice is $\mathbb{Z}[i]$, the Gaussian integers. The orthogonality of $X$ and $Y$ reflects Lorentz invariance: momentum energy and rest-mass energy contribute independently.</p>
   </div>
 
-  <!-- §2 -->
   <div class="section" id="s2">
     <h2><span class="sec-num">2</span>The Eisenstein hexagonal form</h2>
     <p>If the underlying geometry is hexagonal, with basis vectors at $60°$, the norm on $\mathbb{Z}[\omega]$ ($\omega = e^{2\pi i/3}$) becomes</p>
-    <div class="hex-box">
-      <div class="box-label label-hex">Eisenstein norm</div>
-      <div class="eq">$\displaystyle \|z\|^2 = X^2 + XY + Y^2.$<span class="eq-num">(4)</span></div>
-    </div>
-    <p>Substituting $X = pc$ and $Y = mc^2$ gives</p>
-    <div class="hex-box">
-      <div class="box-label label-hex">Eisenstein energy-momentum relation</div>
-      <div class="eq">$\displaystyle E^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4.$<span class="eq-num">(5)</span></div>
-    </div>
-    <p>The third term is the cross-term introduced by the $60°$ lattice geometry. Because $p = |\vec{p}\,| \geq 0$ and $m \geq 0$, the cross-term is non-negative and well-defined. For now we write equation (5) as an algebraic relation; its physical domain of application will be specified in §8.</p>
+    <div class="hex-box"><div class="box-label label-hex">Eisenstein norm</div>
+      <div class="eq">$\displaystyle \|z\|^2 = X^2 + XY + Y^2.$<span class="eq-num">(4)</span></div></div>
+    <p>Substituting $X = pc$ and $Y = mc^2$,</p>
+    <div class="hex-box"><div class="box-label label-hex">Eisenstein energy-momentum relation</div>
+      <div class="eq">$\displaystyle E^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4.$<span class="eq-num">(5)</span></div></div>
+    <p>The third term is the cross-term from the $60°$ lattice geometry. Because $p \geq 0$ and $m \geq 0$, the cross-term is non-negative. The physical domain of application is specified in §8.</p>
   </div>
 
-  <!-- §3 -->
   <div class="section" id="s3">
     <h2><span class="sec-num">3</span>The completed square: hexagonal geometry made visible</h2>
-    <p>The Eisenstein norm admits the completion of the square</p>
-    <div class="eq">$\displaystyle X^2 + XY + Y^2 = \left(X + \tfrac{1}{2}Y\right)^2 + \tfrac{3}{4}\,Y^2.$<span class="eq-num">(6)</span></div>
-    <p>Substituting back,</p>
-    <div class="hex-box">
-      <div class="box-label label-hex">Completed-square form</div>
-      <div class="eq">$\displaystyle E^2 = \left(pc + \tfrac{1}{2}\,mc^2\right)^2 + \tfrac{3}{4}\,m^2 c^4.$<span class="eq-num">(7)</span></div>
-    </div>
-    <p>The standard orthogonal form $E^2 = (pc)^2 + (mc^2)^2$ describes a circle in $(X, Y)$ space. The Eisenstein form describes an ellipse with axes rotated by $30°$. The completed square exhibits this rotation: the momentum axis has been tilted to pick up a rest-mass component ($\tfrac{1}{2}mc^2$), while the mass axis has been rescaled by $\sqrt{3}/2 = \cos 30°$.</p>
-    <p>At rest ($p = 0$): $E^2 = \tfrac{1}{4}m^2c^4 + \tfrac{3}{4}m^2c^4 = m^2c^4$, so $E = mc^2$ is recovered. But the decomposition changes: three quarters sits in the pure mass channel and one quarter in the shifted momentum channel. The rest mass has an intrinsic momentum-like component.</p>
-    <div class="gold-box">
-      <div class="box-label label-gold">Geometric reading</div>
-      <p class="box-text">In the orthogonal (Minkowski) case, mass and momentum are perpendicular axes. In the Eisenstein case, they meet at $60°$. The completed square reveals the $30°$ rotation and the $\cos 30°$ rescaling that distinguish the hexagonal metric. The rest energy $mc^2$ is preserved, but its internal decomposition changes.</p>
-    </div>
+    <p>The Eisenstein norm admits</p>
+    <div class="eq">$\displaystyle X^2 + XY + Y^2 = \left(X + \tfrac{1}{2}Y\right)^2 + \tfrac{3}{4}\,Y^2,$<span class="eq-num">(6)</span></div>
+    <p>so</p>
+    <div class="hex-box"><div class="box-label label-hex">Completed-square form</div>
+      <div class="eq">$\displaystyle E^2 = \left(pc + \tfrac{1}{2}\,mc^2\right)^2 + \tfrac{3}{4}\,m^2 c^4.$<span class="eq-num">(7)</span></div></div>
+    <p>The standard form is a circle in $(X,Y)$ space; the Eisenstein form is an ellipse with axes rotated by $30°$. The momentum axis picks up a rest-mass component ($\tfrac{1}{2}mc^2$); the mass axis is rescaled by $\sqrt{3}/2 = \cos 30°$.</p>
+    <p>At rest ($p = 0$): $E^2 = \tfrac{1}{4}m^2c^4 + \tfrac{3}{4}m^2c^4 = m^2c^4$. The total is preserved, but three quarters sits in the pure mass channel and one quarter in the shifted momentum channel. The rest mass has an intrinsic momentum-like component.</p>
+    <div class="gold-box"><div class="box-label label-gold">Geometric reading</div>
+      <p class="box-text">In the Minkowski case, mass and momentum are perpendicular. In the Eisenstein case, they meet at $60°$. The completed square reveals the $30°$ rotation and $\cos 30°$ rescaling. The rest energy $mc^2$ is preserved, but its internal decomposition changes.</p></div>
   </div>
 
-  <!-- §4 -->
   <div class="section" id="s4">
     <h2><span class="sec-num">4</span>The cross-term as geometric mean</h2>
-    <p>The two diagonal terms are $Y^2 = (mc^2)^2$ and $X^2 = (pc)^2$: inertial rest-mass energy squared and radiation-like momentum energy squared. Their geometric mean is</p>
+    <p>The diagonal terms are $Y^2 = (mc^2)^2$ (rest-mass energy squared) and $X^2 = (pc)^2$ (momentum energy squared). Their geometric mean is</p>
     <div class="eq">$\displaystyle \sqrt{Y^2 \cdot X^2} = XY = mc^2 \cdot pc.$<span class="eq-num">(8)</span></div>
-    <div class="gold-box">
-      <div class="box-label label-gold">Geometric mean structure</div>
-      <p class="box-text">The Eisenstein cross-term is exactly the geometric mean of the two quantities it interpolates: rest-mass energy squared and radiation momentum energy squared. It couples the massive ($p = 0$) and massless ($m = 0$) limits. In any quadratic form $X^2 + \lambda XY + Y^2$, the cross-term $XY$ is the geometric mean of $X^2$ and $Y^2$. The Eisenstein geometry selects $\lambda = 1$.</p>
-    </div>
+    <div class="gold-box"><div class="box-label label-gold">Geometric mean structure</div>
+      <p class="box-text">The Eisenstein cross-term is exactly the geometric mean of rest-mass energy squared and momentum energy squared. It couples the massive ($p = 0$) and massless ($m = 0$) limits. The Eisenstein geometry selects the coupling coefficient $\lambda = 1$.</p></div>
   </div>
 
-  <!-- §5 -->
   <div class="section" id="s5">
     <h2><span class="sec-num">5</span>The Sirag coincidence and its discrepancy</h2>
-    <p>Let $\alpha$ denote the fine-structure constant,</p>
+    <p>The fine-structure constant is</p>
     <div class="eq">$\displaystyle \alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c} \approx \frac{1}{137.036}.$<span class="eq-num">(9)</span></div>
-    <p>Sirag [1] observed that two dimensionless quantities are numerically close:</p>
+    <p>Sirag [1] observed:</p>
     <div class="eq">$\displaystyle N_\alpha = 2^{1/\alpha} \approx 1.79 \times 10^{41}, \qquad N_G = \frac{m_{\rm Pl}^2}{m_p m_e} \approx 3.11 \times 10^{41}.$<span class="eq-num">(10)</span></div>
-    <div class="result-box">
-      <div class="box-label label-accent">Sirag factor</div>
-      <div class="eq">$\displaystyle \frac{N_G}{N_\alpha} \approx 1.74.$<span class="eq-num">(11)</span></div>
-    </div>
-    <p>Taking logarithms: $\ln N_G = \ln N_\alpha + \ln 1.74$, with $\ln 1.74 \approx 0.554$.</p>
+    <div class="result-box"><div class="box-label label-accent">Sirag factor</div>
+      <div class="eq">$\displaystyle \frac{N_G}{N_\alpha} \approx 1.74.$<span class="eq-num">(11)</span></div></div>
+    <p>In logarithmic form: $\ln N_G = \ln N_\alpha + 0.554$.</p>
   </div>
 
-  <!-- §6 -->
   <div class="section" id="s6">
     <h2><span class="sec-num">6</span>The discrepancy as structural analogue of the cross-term</h2>
-    <p>The connection between the Sirag factor and the Eisenstein cross-term is a structural analogy, not a derivation.</p>
-    <p>In the Eisenstein norm the cross-term increases the total by</p>
-    <div class="eq">$\displaystyle \frac{X^2 + XY + Y^2}{X^2 + Y^2} = 1 + \frac{XY}{X^2 + Y^2}.$<span class="eq-num">(12)</span></div>
-    <p>For $X \neq Y$ this ratio lies strictly between 1 and 1.5. The Sirag factor of 1.74 exceeds this range, so the identification is not exact at the level of the norm ratio. The analogy operates at the level of structure: both the Sirag discrepancy and the Eisenstein cross-term are $\mathcal{O}(1)$ multiplicative corrections arising from departure from orthogonality.</p>
+    <p>The connection is a structural analogy. In the Eisenstein norm the cross-term increases the total by</p>
+    <div class="eq">$\displaystyle \frac{X^2 + XY + Y^2}{X^2 + Y^2} = 1 + \frac{XY}{X^2 + Y^2},$<span class="eq-num">(12)</span></div>
+    <p>which lies in $(1, 1.5]$. The Sirag factor of 1.74 exceeds this range, so the identification is not exact at the level of the norm ratio. Both are $\mathcal{O}(1)$ corrections arising from departure from orthogonality.</p>
     <p>Concretely: imposing $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$ gives $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$. The question is what physics produces this effective mass.</p>
   </div>
 
-  <!-- §7 -->
+  <!-- §7: Non-relativistic catastrophe -->
   <div class="section" id="s7">
     <h2><span class="sec-num">7</span>The non-relativistic catastrophe</h2>
-    <p>Before proposing a physical interpretation, we must examine what happens if equation (5) is taken as a literal free-particle dispersion relation for dark matter.</p>
-    <p>The group velocity is</p>
+    <p>If equation (5) is taken as a literal free-particle dispersion relation for dark matter, the group velocity (derived in Appendix B) is</p>
     <div class="eq">$\displaystyle v_g = \frac{\partial E}{\partial p} = \frac{2pc^2 + mc^3}{2E} = \frac{pc^2}{E} + \frac{mc^3}{2E}.$<span class="eq-num">(13)</span></div>
-    <p>The first term is the standard result. The second is new: a velocity correction proportional to $mc^3 / 2E$ that is always positive. In the non-relativistic limit ($p \ll mc$), $E \approx mc^2$, and the correction approaches</p>
+    <p>The first term is the standard result. The second is new. In the non-relativistic limit ($p \ll mc$, $E \approx mc^2$),</p>
     <div class="eq">$\displaystyle \Delta v \;\to\; \frac{c}{2}.$<span class="eq-num">(14)</span></div>
-
-    <div class="warn-box">
-      <div class="box-label label-warn">Non-relativistic catastrophe</div>
-      <p class="box-text">A dark matter particle with any nonzero momentum, no matter how small, would have a group velocity no less than $\sim c/2$. This is incompatible with cold dark matter, which requires $v \ll c$ for gravitational clustering. Structure formation, galactic halo virialisation, and the observed dynamics of systems like the Bullet Cluster all require non-relativistic dark matter kinematics.</p>
-    </div>
-
+    <div class="warn-box"><div class="box-label label-warn">Non-relativistic catastrophe</div>
+      <p class="box-text">A dark matter particle with any nonzero momentum would have a group velocity no less than $\sim c/2$. This is incompatible with cold dark matter, which requires $v \ll c$ for gravitational clustering. Structure formation, halo virialisation, and the Bullet Cluster dynamics all require non-relativistic dark matter kinematics.</p></div>
     <h3>7.1 &ensp; The Bullet Cluster test</h3>
-    <p>In the Bullet Cluster (1E 0657-56), the sub-cluster velocity relative to the main cluster was approximately 4700 km/s, so $v/c \approx 0.016$. For a 2 GeV dark matter particle at this velocity: $pc \approx 0.032$ GeV, $mc^2 = 2$ GeV, giving $E \approx 2.016$ GeV. The cross-term contributes about 1.6% to $E^2$. But the group velocity correction $mc^3/2E \approx 0.496\,c$ dwarfs the actual velocity by a factor of thirty. The dark matter halos could not have passed through each other as observed; they would behave as a relativistic fluid.</p>
-
+    <p>The sub-cluster velocity in 1E 0657-56 was $\sim$4700 km/s ($v/c \approx 0.016$). For a 2 GeV dark matter particle: $pc \approx 0.032$ GeV, $mc^2 = 2$ GeV, $E \approx 2.016$ GeV. The cross-term contributes $\sim$1.6% to $E^2$. But the group velocity correction $mc^3/2E \approx 0.496\,c$ dwarfs the actual velocity by a factor of thirty.</p>
     <h3>7.2 &ensp; Galactic rotation curves</h3>
-    <p>Flat rotation curves require dark matter to form extended, virialised halos with density profiles $\rho \propto r^{-2}$ at intermediate radii. Virial equilibrium relates kinetic and potential energies. If the kinetic energy of dark matter particles at a given momentum is enhanced by the cross-term, the virial equilibrium shifts: halos would be hotter, more extended, and less gravitationally bound than observed.</p>
-
+    <p>Flat rotation curves require virialised halos with $\rho \propto r^{-2}$. An enhanced group velocity shifts virial equilibrium: halos would be hotter, more extended, and less bound than observed.</p>
     <h3>7.3 &ensp; Conclusion</h3>
-    <p>Equation (5) cannot be the free-particle dispersion relation for dark matter. The cross-term does not decouple at low momenta because it is linear in $p$. Any literal application to non-relativistic dark matter kinematics is excluded by observation.</p>
+    <p>Equation (5) cannot be the free-particle dispersion relation for dark matter. The cross-term is linear in $p$ and does not decouple at low momenta.</p>
   </div>
 
-  <!-- §8 -->
+  <!-- §8: Resolution -->
   <div class="section" id="s8">
     <h2><span class="sec-num">8</span>Resolution: internal geometry of a confined dark sector</h2>
-    <p>The resolution comes from recognising where the Eisenstein geometry lives.</p>
-    <p>In QCD, the proton mass ($\sim 938$ MeV) is overwhelmingly generated by the dynamics of confined quarks and gluons, not by the bare quark masses ($m_u + m_d \sim 10$ MeV). Inside the proton, the constituent quarks are highly relativistic: their momenta are of order $\Lambda_{\rm QCD} \sim 200$ MeV, comparable to their effective masses. The internal dynamics are in the regime $p \sim mc$, precisely where the cross-term is largest.</p>
-    <p>The composite proton, however, propagates as a free particle with the standard Lorentz-invariant dispersion relation $E^2 = p^2c^2 + m_p^2 c^4$. The internal structure is invisible to the external kinematics. Confinement ensures this separation.</p>
-    <p>We propose that the same separation applies to a dark confined sector:</p>
-
-    <div class="hex-box">
-      <div class="box-label label-hex">Internal vs external kinematics</div>
-      <p class="box-text"><strong>Internally:</strong> the constituents of the dark hadron (dark quarks, dark gluons) obey the Eisenstein energy-momentum relation $E^2 = X^2 + XY + Y^2$, where $X$ and $Y$ are the constituent momentum energy and constituent mass energy. The hexagonal geometry governs the mass-generating dynamics of the confined sector.</p>
-      <p class="box-text"><strong>Externally:</strong> the composite dark hadron propagates with the standard Lorentz-invariant dispersion relation $E^2 = p^2c^2 + m_{\rm dm}^2 c^4$. It is cold, collisionless, and non-relativistic in galactic halos, consistent with all observational constraints.</p>
-    </div>
-
-    <p>The cross-term is active inside the dark hadron, at scales $\lesssim \Lambda_{\rm dark}^{-1}$, where the constituent momenta are relativistic. It is invisible at the macroscopic scales of halos, clusters, and structure formation, where only the composite mass $m_{\rm dm}$ enters.</p>
-
+    <p>The resolution is to recognise where the Eisenstein geometry lives.</p>
+    <p>In QCD, the proton mass ($\sim$938 MeV) is overwhelmingly generated by confined quark-gluon dynamics, not by bare quark masses ($m_u + m_d \sim 10$ MeV). Inside the proton, constituent quarks are highly relativistic: momenta of order $\Lambda_{\rm QCD} \sim 200$ MeV, comparable to their effective masses. This is the regime $p \sim mc$ where the cross-term is largest.</p>
+    <p>The composite proton, however, propagates with the standard dispersion relation $E^2 = p^2c^2 + m_p^2c^4$. Confinement separates internal from external kinematics.</p>
+    <div class="hex-box"><div class="box-label label-hex">Internal vs external kinematics</div>
+      <p class="box-text"><strong>Internally:</strong> constituents of the dark hadron obey the Eisenstein relation $E^2 = X^2 + XY + Y^2$, where $X$ and $Y$ are constituent momentum and mass energies. The hexagonal geometry governs the mass-generating dynamics.</p>
+      <p class="box-text"><strong>Externally:</strong> the composite dark hadron propagates with standard $E^2 = p^2c^2 + m_{\rm dm}^2c^4$. It is cold, collisionless, and non-relativistic in halos.</p></div>
     <h3>8.1 &ensp; Where the hexagonal geometry lives</h3>
-    <p>In QCD, the internal symmetry space of SU(3)$_c$ is hexagonal (the $A_2$ root lattice). This internal geometry determines the mass spectrum of hadrons through confinement dynamics. The proton mass is not the sum of quark masses; it is a dynamical consequence of the gauge geometry.</p>
-    <p>Analogously, in a dark SU(3) sector, the Eisenstein norm on the $A_2$ root lattice would govern the internal mass-generating dynamics. The composite dark hadron mass $m_{\rm dm}$ is a dynamical consequence of the dark gauge geometry, not the sum of dark constituent masses.</p>
-
+    <p>In QCD, the internal symmetry space of SU(3)$_c$ has the hexagonal $A_2$ root lattice. This geometry determines the hadron mass spectrum through confinement. Analogously, in a dark SU(3) sector, the Eisenstein norm on $A_2$ governs mass generation. The dark hadron mass is a dynamical consequence of the dark gauge geometry.</p>
     <h3>8.2 &ensp; Why the cross-term matters for mass generation</h3>
-    <p>In the orthogonal (Gaussian) case, the mass of a confined state is built from the sum of squared constituent energies: $E^2 \sim \sum (p_i c)^2 + \sum (m_i c^2)^2$. In the hexagonal (Eisenstein) case, the cross-terms $m_i c^2 \cdot p_i c$ contribute as well. Since these are the geometric means of the rest-mass and momentum contributions, they interpolate between the two. The result is a modified relationship between the constituent dynamics and the composite mass.</p>
-    <p>The Sirag factor of 1.74 then measures the degree to which the hexagonal cross-terms contribute to the dark hadron mass, relative to what an orthogonal geometry would produce.</p>
-
-    <h3>8.3 &ensp; The QCD analogy made explicit</h3>
-    <div class="remark-box">
-      <div class="box-label label-blue">QCD parallel</div>
-      <p class="box-text"><strong>QCD:</strong> gauge group SU(3)$_c$, root lattice $A_2$ (hexagonal), confinement scale $\Lambda_{\rm QCD} \sim 200$ MeV, composite proton mass $\sim 938$ MeV $\sim$ a few $\times \Lambda_{\rm QCD}$. Internal quarks highly relativistic. External proton obeys standard dispersion relation.</p>
-      <p class="box-text"><strong>Dark sector (proposed):</strong> gauge group SU(3)$_{\rm dark}$ (or similar), root lattice $A_2$ (hexagonal), confinement scale $\Lambda_{\rm dark} \sim \Lambda_{\rm QCD}$, composite dark hadron mass $\sim 2$ GeV $\sim$ a few $\times \Lambda_{\rm dark}$. Internal dark quarks highly relativistic, governed by Eisenstein norm. External dark hadron obeys standard dispersion relation.</p>
-    </div>
+    <p>In the orthogonal case, confined-state mass is built from $E^2 \sim \sum X_i^2 + \sum Y_i^2$. In the Eisenstein case, cross-terms $X_i Y_i$ contribute. Since these are the geometric means of rest-mass and momentum contributions, they interpolate between the two. The Sirag factor of 1.74 measures how much the hexagonal cross-terms contribute to the dark hadron mass, relative to an orthogonal geometry.</p>
+    <h3>8.3 &ensp; The QCD analogy</h3>
+    <div class="remark-box"><div class="box-label label-blue">QCD parallel</div>
+      <p class="box-text"><strong>QCD:</strong> SU(3)$_c$, root lattice $A_2$ (hexagonal), $\Lambda_{\rm QCD} \sim 200$ MeV, proton $\sim 938$ MeV $\sim$ few $\times\Lambda_{\rm QCD}$. Internal quarks relativistic. External proton: standard dispersion.</p>
+      <p class="box-text"><strong>Dark sector (proposed):</strong> SU(3)$_{\rm dark}$ (or similar), root lattice $A_2$, $\Lambda_{\rm dark} \sim \Lambda_{\rm QCD}$, dark hadron $\sim 2$ GeV $\sim$ few $\times\Lambda_{\rm dark}$. Internal dark quarks relativistic, governed by Eisenstein norm. External dark hadron: standard dispersion.</p></div>
   </div>
 
   <!-- §9 -->
@@ -302,112 +226,124 @@
     <h2><span class="sec-num">9</span>Connection with the $A_2$ root lattice of SU(3)</h2>
     <p>The Cartan matrix of SU(3) is</p>
     <div class="eq">$\displaystyle A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}.$<span class="eq-num">(15)</span></div>
-    <p>The corresponding quadratic form on the root space is $\tfrac{1}{2}\,\mathbf{x}^T A\,\mathbf{x} = a^2 - ab + b^2$. Under the reflection $b \to -b$ this becomes $a^2 + ab + b^2$, the Eisenstein norm. The lattice generated is unchanged: both forms represent the same $A_2$ hexagonal lattice up to basis choice.</p>
-    <div class="gold-box">
-      <div class="box-label label-gold">Key observation</div>
-      <p class="box-text">The Eisenstein norm is the natural quadratic form on the root lattice of SU(3). If a dark confining gauge sector has SU(3)-like structure, the hexagonal geometry is inherited from the gauge symmetry. The cross-term is not imposed <em>ad hoc</em>; it is the kinematic form native to the root system of the confining group.</p>
-    </div>
+    <p>The quadratic form on the root space is $\tfrac{1}{2}\mathbf{x}^T A\mathbf{x} = a^2 - ab + b^2$. Under $b \to -b$ this becomes $a^2 + ab + b^2$, the Eisenstein norm. The lattice is unchanged: both forms represent the same $A_2$ hexagonal lattice up to basis choice.</p>
+    <div class="gold-box"><div class="box-label label-gold">Key observation</div>
+      <p class="box-text">The Eisenstein norm is the natural quadratic form on the SU(3) root lattice. If a dark confining sector has SU(3)-like structure, the hexagonal geometry is inherited from the gauge symmetry. The cross-term is native to the root system of the confining group.</p></div>
   </div>
 
   <!-- §10 -->
   <div class="section" id="s10">
     <h2><span class="sec-num">10</span>Symmetry: isotropy, CPT, and the preferred frame</h2>
-    <p>Under the reinterpretation of §8, the Eisenstein norm governs the internal dynamics of dark confinement, not the free-particle propagation of composite dark matter. The external kinematics are Lorentz-invariant. The following symmetry discussion therefore applies to the <em>internal</em> mass-generating sector.</p>
-
+    <p>Under the reinterpretation of §8, the Eisenstein norm governs internal dynamics, not free-particle propagation. The following applies to the internal sector.</p>
     <h3>10.1 &ensp; Spatial isotropy</h3>
-    <p>The cross-term depends only on $p = |\vec{p}\,|$ and $m$, both invariant under spatial rotations. The internal dynamics therefore preserve SO(3).</p>
-
+    <p>The cross-term depends on $p = |\vec{p}\,|$ and $m$, both SO(3)-invariant. The internal dynamics preserve spatial isotropy.</p>
     <h3>10.2 &ensp; CPT behaviour</h3>
-    <p>Under C, P, T individually: $m$ is invariant under all three; $|\vec{p}\,|$ is invariant under C, P (parity flips $\vec{p}$ but not $|\vec{p}\,|$), and T (time reversal flips $\vec{p}$ but not $|\vec{p}\,|$). The cross-term $mc^2 \cdot |\vec{p}\,|c$ is therefore invariant under each of C, P, T separately, and under CPT.</p>
-
-    <div class="remark-box">
-      <div class="box-label label-blue">On the CPT theorem</div>
-      <p class="box-text">The standard CPT theorem (Lüders, Pauli, Jost) derives CPT invariance from Lorentz invariance together with locality and unitarity. If the internal dynamics break boost invariance, the theorem does not apply. CPT invariance of the dark sector is therefore not guaranteed but can be imposed as a symmetry assumption. The ansatz is CPT-even at the level of the one-particle relation, as shown above.</p>
-      <p class="box-text">This is consistent with the Boyle-Finn-Turok approach [5], where CPT is a cosmological boundary condition rather than a consequence of local field theory.</p>
-    </div>
-
+    <p>Under C, P, T: $m$ is invariant under all three. $|\vec{p}\,|$ is invariant under C; invariant under P ($\vec{p} \to -\vec{p}$ but $|\vec{p}\,|$ unchanged); invariant under T ($\vec{p} \to -\vec{p}$ but $|\vec{p}\,|$ unchanged). The cross-term $mc^2 \cdot |\vec{p}\,|c$ is CPT-even.</p>
+    <div class="remark-box"><div class="box-label label-blue">On the CPT theorem</div>
+      <p class="box-text">The Lüders-Pauli-Jost theorem derives CPT from Lorentz invariance + locality + unitarity. If internal dynamics break boost invariance, the theorem does not apply. CPT is imposed as a dark-sector symmetry assumption. The ansatz is CPT-even as shown above. This parallels the Boyle-Finn-Turok approach [5] where CPT is a cosmological boundary condition.</p></div>
     <h3>10.3 &ensp; The preferred frame</h3>
-    <p>A boost-violating internal dynamics defines a preferred frame. The natural choice is the CMB rest frame. Since the internal dynamics are confined at scales $\lesssim \Lambda_{\rm dark}^{-1}$, the preferred-frame aspect does not affect the macroscopic behaviour of dark matter, which propagates with standard Lorentz-invariant kinematics.</p>
+    <p>Boost-violating internal dynamics define a preferred frame. The CMB rest frame is the natural choice. Since internal dynamics are confined at scales $\lesssim \Lambda_{\rm dark}^{-1}$, this does not affect macroscopic behaviour.</p>
   </div>
 
   <!-- §11 -->
   <div class="section" id="s11">
     <h2><span class="sec-num">11</span>The GeV mass scale from geometric mean construction</h2>
-    <p>The Sirag factor of 1.74 defines an effective mass $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$ via $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$. Decomposing into baryonic and dark contributions by the mass-fraction weighted geometric mean</p>
+    <p>The Sirag factor defines $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$. Decomposing via the mass-fraction weighted geometric mean,</p>
     <div class="eq">$\displaystyle m_X = m_p^{\,1-f}\; m_{\rm dm}^{\,f}, \qquad f \approx 0.84,$<span class="eq-num">(16)</span></div>
-    <p>and solving,</p>
-    <div class="result-box">
-      <div class="box-label label-accent">Inferred dark matter mass</div>
-      <div class="eq">$\displaystyle m_{\rm dm} = m_p \left(\frac{m_X}{m_p}\right)^{1/f} \approx 2\;\text{GeV}/c^2.$<span class="eq-num">(17)</span></div>
-    </div>
-    <p>This is the GeV scale generated by QCD confinement. Under the present interpretation, it arises because the Eisenstein cross-term in the internal mass-generating dynamics and the confining gauge geometry share a common origin in the $A_2$ root lattice.</p>
-    <p>The justification for using $m_p$ as the baryonic mass scale is given in Appendix A.</p>
+    <div class="result-box"><div class="box-label label-accent">Inferred dark matter mass</div>
+      <div class="eq">$\displaystyle m_{\rm dm} = m_p \left(\frac{m_X}{m_p}\right)^{1/f} \approx 2\;\text{GeV}/c^2.$<span class="eq-num">(17)</span></div></div>
+    <p>Justification for using $m_p$ as the baryonic scale is in Appendix A.</p>
   </div>
 
   <!-- §12 -->
   <div class="section" id="s12">
     <h2><span class="sec-num">12</span>Observational consequences</h2>
-
     <h3>12.1 &ensp; Galactic rotation curves</h3>
-    <p>Under the reinterpretation of §8, the composite dark matter particle has standard free-particle kinematics. It is cold, non-relativistic, and collisionless at halo scales. Rotation curve phenomenology is therefore unchanged from standard CDM.</p>
-    <p>However, the internal structure of the dark hadron could in principle produce form-factor effects in dark matter self-interactions, analogous to the finite-size effects that appear in nucleon-nucleon scattering. These would modify the self-interaction cross-section at momentum transfers comparable to $\Lambda_{\rm dark}$, potentially addressing the cusp-core problem at galactic centres without affecting large-scale structure.</p>
-
+    <p>The composite dark hadron has standard free-particle kinematics: cold, non-relativistic, collisionless. Rotation curve phenomenology is unchanged from CDM. However, internal dark-hadron structure could produce form-factor effects in self-interactions (analogous to finite-size effects in nucleon-nucleon scattering), potentially addressing the cusp-core problem at galactic centres.</p>
     <h3>12.2 &ensp; The Bullet Cluster</h3>
-    <p>The Bullet Cluster constrains the dark matter self-interaction cross-section to $\sigma/m \lesssim 1$ cm$^2$/g. This constraint applies to the composite dark hadron, whose external kinematics are standard. The internal Eisenstein geometry is invisible at the collision energy scale of the Bullet Cluster ($E_{\rm cm}$ per particle $\sim$ keV), which is far below the dark confinement scale ($\sim$ GeV). The constraint is satisfied.</p>
-
+    <p>The constraint $\sigma/m \lesssim 1$ cm$^2$/g applies to composite dark hadrons with standard external kinematics. The internal Eisenstein geometry is invisible at the Bullet Cluster collision scale ($E_{\rm cm} \sim$ keV per particle), far below $\Lambda_{\rm dark} \sim$ GeV.</p>
     <h3>12.3 &ensp; Structure formation</h3>
-    <p>Cold dark matter structure formation requires $m_{\rm dm} \gtrsim$ keV and $v \ll c$ at matter-radiation equality. A 2 GeV composite dark hadron with standard free-particle kinematics satisfies both requirements. The Eisenstein internal dynamics produce the mass but do not modify the clustering behaviour.</p>
-
-    <h3>12.4 &ensp; Potential signatures</h3>
-    <p>If the dark sector undergoes a confining phase transition in the early universe (analogous to the QCD phase transition at $T \sim 150$ MeV), this could produce a gravitational wave background at frequencies determined by $\Lambda_{\rm dark}$. For $\Lambda_{\rm dark} \sim \Lambda_{\rm QCD}$, the signal would lie in the nanohertz band probed by pulsar timing arrays.</p>
+    <p>A 2 GeV composite dark hadron with standard kinematics satisfies cold dark matter requirements: $m \gg$ keV and $v \ll c$ at matter-radiation equality.</p>
+    <h3>12.4 &ensp; Dark Cherenkov radiation and the dispersive dark vacuum</h3>
+    <p>The Eisenstein dispersion relation can be read as propagation through an effective medium. Define an effective dark refractive index $n_{\rm dark}$ via the phase velocity,</p>
+    <div class="eq">$\displaystyle v_{\rm ph} = \frac{E}{p} = \frac{c\,\sqrt{X^2 + XY + Y^2}}{X/c}.$<span class="eq-num">(18)</span></div>
+    <p>In the standard (orthogonal) case, $v_{\rm ph} = E/p = c\sqrt{1 + (mc/p)^2}$, which is always superluminal for massive particles. The Eisenstein cross-term modifies this: it changes the relationship between phase velocity and group velocity, making the effective dark vacuum <em>dispersive</em>.</p>
+    <p>In a dispersive medium, Cherenkov radiation occurs when a charged particle exceeds the local phase velocity of the radiation field. The dark analogue: if dark constituents inside a dark hadron exceed the phase velocity of some dark radiation field (dark gluons, for instance), they would emit dark Cherenkov radiation. This is formally identical to gluon bremsstrahlung in QCD, but with the modified dispersion relation changing the emission kinematics.</p>
+    <p>For the composite dark hadron, the external kinematics are standard and no vacuum Cherenkov effect occurs. This is consistent with the absence of vacuum Cherenkov constraints on dark matter from cosmic ray observations [4]. The Cherenkov phenomenology is confined to the interior of the dark hadron, where it contributes to the binding dynamics rather than producing observable radiation.</p>
+    <h3>12.5 &ensp; Gravitational wave signatures</h3>
+    <p>If the dark sector undergoes a confining phase transition (analogous to the QCD transition at $T \sim 150$ MeV), this could produce a gravitational wave background. For $\Lambda_{\rm dark} \sim \Lambda_{\rm QCD}$, the signal would lie in the nanohertz band probed by pulsar timing arrays.</p>
   </div>
 
   <!-- §13 -->
   <div class="section" id="s13">
     <h2><span class="sec-num">13</span>Discussion</h2>
-
-    <p><strong>(i)</strong> The Sirag factor $N_G / N_\alpha \approx 1.74$ is an $\mathcal{O}(1)$ multiplicative correction to a large-number coincidence. The Eisenstein cross-term is an $\mathcal{O}(1)$ multiplicative correction to a quadratic norm. We propose these share a common geometric origin, as a structural analogy.</p>
-
-    <p><strong>(ii)</strong> The hexagonal quadratic form $X^2 + XY + Y^2$ is the Eisenstein norm on the $A_2$ root lattice. The cross-term $XY$ is the geometric mean of rest-mass energy squared and momentum energy squared. The completed-square form reveals the $30°$ rotation and $\cos 30°$ rescaling of the hexagonal metric.</p>
-
-    <p><strong>(iii)</strong> Taken as a literal free-particle dispersion relation, the Eisenstein norm produces a non-relativistic catastrophe: a constant group-velocity correction of $\sim c/2$ that is excluded by structure formation, rotation curve dynamics, and Bullet Cluster observations.</p>
-
-    <p><strong>(iv)</strong> The resolution is to locate the Eisenstein geometry inside a confined dark sector: it governs the internal dynamics of dark hadron mass generation, where constituent momenta are relativistic ($p \sim mc$), while the composite dark hadron propagates with standard Lorentz-invariant kinematics. This parallels QCD, where the hexagonal $A_2$ root lattice of SU(3)$_c$ governs internal dynamics but the proton has standard external kinematics.</p>
-
-    <p><strong>(v)</strong> The geometric mean construction yields $m_{\rm dm} \approx 2$ GeV, consistent with a dark confinement scale comparable to $\Lambda_{\rm QCD}$. The internal Eisenstein dynamics are isotropic and CPT-even. CPT is imposed as a dark-sector symmetry, not derived from the Lüders-Pauli-Jost theorem, consistent with the Boyle-Finn-Turok approach.</p>
-
-    <div class="gold-box">
-      <div class="box-label label-gold">Summary</div>
-      <p class="box-text">The Sirag factor is structurally analogous to the Eisenstein cross-term. The Eisenstein geometry is the root geometry of SU(3). The mass scale it produces is the confinement scale. The cross-term is the geometric mean of the rest-mass and momentum contributions. The completed-square form reveals the $30°$ rotation and $\cos 30°$ rescaling of the hexagonal metric. The Eisenstein norm governs the internal mass-generating dynamics of a confined dark sector, not the free-particle kinematics. The composite dark hadron has standard Lorentz-invariant propagation. These observations are not independent.</p>
-    </div>
-
-    <p>For a discussion of the assumptions involved in extending equivalence principles to non-luminous matter, see the <a class="ref-link" href="https://leelemacjames.github.io/darkMattermindMap/">Dark Matter Concept Map</a> [6].</p>
+    <p><strong>(i)</strong> The Sirag factor $N_G/N_\alpha \approx 1.74$ and the Eisenstein cross-term are both $\mathcal{O}(1)$ corrections from departure from orthogonality. The connection is a structural analogy.</p>
+    <p><strong>(ii)</strong> The Eisenstein norm $X^2 + XY + Y^2$ has the cross-term $XY$ as geometric mean of $X^2$ and $Y^2$. The completed square reveals a $30°$ rotation and $\cos 30°$ rescaling.</p>
+    <p><strong>(iii)</strong> As a literal free-particle dispersion, the Eisenstein norm produces a $c/2$ group-velocity floor, excluded by structure formation, rotation curves, and the Bullet Cluster.</p>
+    <p><strong>(iv)</strong> The resolution: the Eisenstein geometry governs internal dynamics of a confined dark sector where constituent momenta are relativistic. The composite dark hadron has standard Lorentz-invariant external kinematics. This parallels QCD.</p>
+    <p><strong>(v)</strong> The geometric mean construction yields $m_{\rm dm} \approx 2$ GeV, consistent with dark confinement at $\Lambda_{\rm dark} \sim \Lambda_{\rm QCD}$. The internal dynamics are isotropic and CPT-even, with CPT imposed as a symmetry assumption. The dispersive dark vacuum admits dark Cherenkov phenomenology confined to the dark hadron interior.</p>
+    <div class="gold-box"><div class="box-label label-gold">Summary</div>
+      <p class="box-text">The Sirag factor is structurally analogous to the Eisenstein cross-term. The Eisenstein geometry is the root geometry of SU(3). The mass scale it produces is the confinement scale. The cross-term is the geometric mean of rest-mass and momentum contributions. The completed square reveals the $30°$ rotation and $\cos 30°$ rescaling. The Eisenstein norm governs internal mass-generating dynamics, not free-particle kinematics. The composite dark hadron propagates with standard Lorentz-invariant dispersion. These observations are not independent.</p></div>
+    <p>For a discussion of assumptions in extending equivalence principles to non-luminous matter, see the <a class="ref-link" href="https://leelemacjames.github.io/darkMattermindMap/">Dark Matter Concept Map</a> [6].</p>
   </div>
 
   <!-- APPENDIX A -->
   <div class="section" id="appA">
     <h2><span class="app-num">A</span>Cosmological abundance justification</h2>
-    <p>The choice of $m_p m_e$ as the mass product in $\alpha_g = G m_p m_e / \hbar c$ requires justification. Cosmological abundances select specific species overwhelmingly.</p>
-
+    <p>The choice of $m_p m_e$ in $\alpha_g = Gm_pm_e/\hbar c$ is justified by cosmological abundances.</p>
     <h3>A.1 &ensp; Baryon abundances</h3>
-    <p>At $T_{\rm CMB} \approx 2.7$ K $\approx 2.3 \times 10^{-4}$ eV, any baryon heavier than the nucleon is suppressed by $\exp(-\Delta mc^2 / kT)$. For the $\Lambda$ baryon ($\Delta mc^2 \approx 177$ MeV):</p>
-    <div class="eq">$\displaystyle \exp\!\left(-\frac{177\;\text{MeV}}{2.3\times10^{-4}\;\text{eV}}\right) \approx \exp(-7.7\times10^{5}) \approx 0.$<span class="eq-num">(A.1)</span></div>
-    <p>Only nucleons survive. Primordial helium synthesis gives $\sim$87.5% protons, $\sim$12.5% neutrons. The geometric mean nucleon mass $m_N = m_p^{0.875} m_n^{0.125}$ satisfies $m_N/m_p \approx 1.00017$: a correction at $\mathcal{O}(10^{-4})$, negligible here.</p>
-
+    <p>At $T_{\rm CMB} \approx 2.3 \times 10^{-4}$ eV, any baryon heavier than the nucleon is suppressed by $\exp(-\Delta mc^2/kT)$. For the $\Lambda$ ($\Delta mc^2 \approx 177$ MeV): $\exp(-7.7 \times 10^5) \approx 0$. Only nucleons survive. BBN gives $\sim$87.5% protons, $\sim$12.5% neutrons. The geometric mean nucleon mass satisfies $m_N/m_p \approx 1.00017$: negligible.</p>
     <h3>A.2 &ensp; Charged lepton abundances</h3>
-    <p>The muon ($\tau_\mu \approx 2.2\;\mu$s) and tau ($\tau_\tau \approx 2.9 \times 10^{-13}$ s) decay rapidly. Only electrons persist. Charge neutrality gives $n_e = n_p$. The arithmetic and geometric means of $(m_e, m_\mu, m_\tau)$ with equal weights are $\sim$628 MeV and $\sim$46 MeV, both far from the correct scale. The electron is selected by persistence, not averaging.</p>
-
+    <p>Muon ($\tau \approx 2.2\;\mu$s) and tau ($\tau \approx 2.9 \times 10^{-13}$ s) decay rapidly. Only electrons persist. Charge neutrality gives $n_e = n_p$. The equal-weight arithmetic and geometric means of $(m_e, m_\mu, m_\tau)$ are $\sim$628 MeV and $\sim$46 MeV: both wrong. The electron is selected by persistence.</p>
     <h3>A.3 &ensp; Neutrino abundances</h3>
-    <p>The cosmic neutrino background contains $\sim$112 per cm$^3$ per flavour ($\sim$336 total) [3], outnumbering baryons by $\sim 10^9$. But neutrino masses ($\sim$10 to 50 meV) contribute negligibly to any gravitational coupling compared to the nucleon-electron product.</p>
-
+    <p>The cosmic neutrino background has $\sim$336 per cm$^3$ (all flavours) [3], outnumbering baryons by $\sim 10^9$. Neutrino masses ($\sim$10 to 50 meV) contribute negligibly to the gravitational coupling.</p>
     <h3>A.4 &ensp; Number densities</h3>
-    <div class="remark-box">
-      <div class="box-label label-blue">Present-day number densities (order of magnitude, from [3])</div>
+    <div class="remark-box"><div class="box-label label-blue">Order of magnitude, from [3]</div>
       <p class="box-text">Baryons: $n_b \sim 2.5 \times 10^{-7}$ cm$^{-3}$ ($\sim$87.5% p, $\sim$12.5% n)</p>
       <p class="box-text">Electrons: $n_e \sim 2.2 \times 10^{-7}$ cm$^{-3}$</p>
-      <p class="box-text">Neutrinos: $n_\nu \sim 336$ cm$^{-3}$ (all flavours)</p>
-      <p class="box-text">$N_{\rm baryons} \sim 10^{80}$ in the observable universe, giving $\sqrt{N} \sim 10^{40}$: the Dirac coincidence.</p>
-    </div>
+      <p class="box-text">Neutrinos: $n_\nu \sim 336$ cm$^{-3}$</p>
+      <p class="box-text">$N_{\rm baryons} \sim 10^{80}$, giving $\sqrt{N} \sim 10^{40}$: the Dirac coincidence.</p></div>
+  </div>
+
+  <!-- APPENDIX B -->
+  <div class="section" id="appB">
+    <h2><span class="app-num">B</span>Group velocity from a modified dispersion relation</h2>
+
+    <h3>B.1 &ensp; Phase velocity and group velocity</h3>
+    <p>For a wave with angular frequency $\omega$ and wavevector magnitude $k$, two velocities are defined:</p>
+    <div class="eq">$\displaystyle v_{\rm ph} = \frac{\omega}{k} \qquad \text{(phase velocity: speed of a single crest)}$<span class="eq-num">(B.1)</span></div>
+    <div class="eq">$\displaystyle v_g = \frac{\partial \omega}{\partial k} \qquad \text{(group velocity: speed of the wave packet envelope)}$<span class="eq-num">(B.2)</span></div>
+    <p>The group velocity is the speed at which energy and information propagate. When light enters a medium with refractive index $n(\omega)$, the phase velocity becomes $c/n$ and the group velocity becomes $c\,/\,(n + \omega\, dn/d\omega)$. These differ whenever the medium is dispersive ($dn/d\omega \neq 0$).</p>
+
+    <h3>B.2 &ensp; Application to massive particles</h3>
+    <p>For a massive particle, the de Broglie relations give</p>
+    <div class="eq">$\displaystyle E = \hbar\omega, \qquad p = \hbar k.$<span class="eq-num">(B.3)</span></div>
+    <p>Therefore $\omega = E/\hbar$ and $k = p/\hbar$. The group velocity becomes</p>
+    <div class="eq">$\displaystyle v_g = \frac{\partial \omega}{\partial k} = \frac{\partial(E/\hbar)}{\partial(p/\hbar)} = \frac{\partial E}{\partial p}.$<span class="eq-num">(B.4)</span></div>
+    <p>This is the velocity at which the particle, treated as a quantum-mechanical wave packet, actually moves through space. For a free relativistic particle with $E^2 = p^2c^2 + m^2c^4$, differentiating gives $v_g = pc^2/E$, which in the non-relativistic limit reduces to $v = p/m$: the classical velocity.</p>
+    <p>The group velocity is therefore the physically relevant speed. It enters the virial theorem, the Boltzmann equation, structure formation calculations, and collision dynamics.</p>
+
+    <h3>B.3 &ensp; Derivation for the Eisenstein dispersion relation</h3>
+    <p>We have $E^2 = p^2c^2 + mpc^3 + m^2c^4$, with $m$ constant and $p = |\vec{p}\,|$ the variable. To find $v_g = \partial E / \partial p$, differentiate both sides with respect to $p$.</p>
+    <p><strong>Left side.</strong> By the chain rule,</p>
+    <div class="eq">$\displaystyle \frac{\partial}{\partial p}(E^2) = 2E \cdot \frac{\partial E}{\partial p}.$<span class="eq-num">(B.5)</span></div>
+    <p><strong>Right side.</strong> Term by term:</p>
+    <div class="eq">$\displaystyle \frac{\partial}{\partial p}(p^2 c^2) = 2pc^2,$<span class="eq-num">(B.6)</span></div>
+    <div class="eq">$\displaystyle \frac{\partial}{\partial p}(mpc^3) = mc^3 \qquad (m \text{ is constant}),$<span class="eq-num">(B.7)</span></div>
+    <div class="eq">$\displaystyle \frac{\partial}{\partial p}(m^2c^4) = 0.$<span class="eq-num">(B.8)</span></div>
+    <p>Combining,</p>
+    <div class="eq">$\displaystyle 2E \cdot \frac{\partial E}{\partial p} = 2pc^2 + mc^3.$<span class="eq-num">(B.9)</span></div>
+    <p>Dividing both sides by $2E$,</p>
+    <div class="hex-box"><div class="box-label label-hex">Group velocity</div>
+      <div class="eq">$\displaystyle v_g = \frac{\partial E}{\partial p} = \frac{2pc^2 + mc^3}{2E} = \underbrace{\frac{pc^2}{E}}_{\text{standard}} + \underbrace{\frac{mc^3}{2E}}_{\text{cross-term correction}}.$<span class="eq-num">(B.10)</span></div></div>
+
+    <h3>B.4 &ensp; The non-relativistic limit</h3>
+    <p>For $p \ll mc$ (slow particle), $E \approx mc^2$. The standard term gives $pc^2/E \approx p/m = v$, the classical velocity. The cross-term correction gives</p>
+    <div class="eq">$\displaystyle \frac{mc^3}{2mc^2} = \frac{c}{2}.$<span class="eq-num">(B.11)</span></div>
+    <p>This is constant, independent of $p$, and enormous. A particle with arbitrarily small momentum would still have group velocity $\gtrsim c/2$. This is the non-relativistic catastrophe of §7.</p>
+
+    <h3>B.5 &ensp; Why "group velocity" is the right quantity</h3>
+    <p>For massive particles, the group velocity is the physical velocity: the speed at which mass, energy, and information travel through space. The phase velocity $v_{\rm ph} = E/p$ for a massive particle is always superluminal ($v_{\rm ph} = c^2/v_g > c$ in the standard case) and carries no energy. The group velocity is therefore the quantity that enters the virial theorem, the Boltzmann equation, structure formation, and collision dynamics such as the Bullet Cluster. The $c/2$ floor on $v_g$ is a physical prediction, not a mathematical artefact, which is why it excludes the naive free-particle interpretation and motivates the confined-sector reinterpretation of §8.</p>
   </div>
 
   <!-- REFERENCES -->
@@ -423,7 +359,6 @@
 
   <div class="footer"><p>KaTeX rendering</p></div>
 </div>
-
 <script>
   renderMathInElement(document.body, {
     delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
@@ -432,6 +367,7 @@
 </script>
 </body>
 </html>
+
 
 
 
