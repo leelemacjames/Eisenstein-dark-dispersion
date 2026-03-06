@@ -40,63 +40,32 @@
 
   .page { max-width: 740px; margin: 0 auto; padding: 0 32px; }
 
-  .title-block {
-    padding: 80px 0 50px;
-    border-bottom: 2px solid var(--ink);
-    margin-bottom: 40px;
-  }
+  .title-block { padding: 80px 0 50px; border-bottom: 2px solid var(--ink); margin-bottom: 40px; }
 
   .journal-line {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-    margin-bottom: 30px;
+    font-family: 'Nunito Sans', sans-serif; font-weight: 300;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-dim); margin-bottom: 30px;
   }
 
   .title-block h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 1.28;
-    color: var(--ink);
-    margin-bottom: 16px;
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+    font-size: 2rem; line-height: 1.28; color: var(--ink); margin-bottom: 16px;
   }
 
   .title-block h1 em { font-style: italic; color: var(--hex); }
 
-  .author-line {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    font-size: 0.88rem;
-    color: var(--ink-light);
-    margin-bottom: 6px;
-  }
-
-  .date-line {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.78rem;
-    color: var(--ink-dim);
-  }
+  .author-line { font-family: 'Nunito Sans', sans-serif; font-weight: 400; font-size: 0.88rem; color: var(--ink-light); margin-bottom: 6px; }
+  .date-line { font-family: 'Nunito Sans', sans-serif; font-weight: 300; font-size: 0.78rem; color: var(--ink-dim); }
 
   .abstract {
-    background: var(--hex-light);
-    border-left: 3px solid var(--hex);
-    padding: 24px 28px;
-    margin: 40px 0 40px;
-    border-radius: 0 6px 6px 0;
+    background: var(--hex-light); border-left: 3px solid var(--hex);
+    padding: 24px 28px; margin: 40px 0 40px; border-radius: 0 6px 6px 0;
   }
 
   .box-label {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+    font-family: 'Nunito Sans', sans-serif; font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;
   }
 
   .label-accent { color: var(--accent); }
@@ -108,39 +77,20 @@
   .abstract p, .box-text { font-size: 0.92rem; line-height: 1.7; color: var(--ink-light); margin: 0; }
   .box-text + .box-text { margin-top: 12px; }
 
-  /* Notation box */
   .notation-box {
-    background: #f4f2ec;
-    border: 1px solid var(--rule);
-    padding: 20px 24px;
-    margin: 0 0 50px;
-    border-radius: 6px;
-    column-count: 2;
-    column-gap: 32px;
+    background: #f4f2ec; border: 1px solid var(--rule);
+    padding: 20px 24px; margin: 0 0 50px; border-radius: 6px;
+    column-count: 2; column-gap: 32px;
   }
 
-  .notation-box p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-bottom: 4px;
-    text-align: left;
-    break-inside: avoid;
-  }
+  .notation-box p { font-size: 0.85rem; line-height: 1.6; margin-bottom: 4px; text-align: left; break-inside: avoid; }
 
-  .toc {
-    margin: 0 0 50px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--rule);
-  }
+  .toc { margin: 0 0 50px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
 
   .toc-label {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-    margin-bottom: 14px;
+    font-family: 'Nunito Sans', sans-serif; font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-dim); margin-bottom: 14px;
   }
 
   .toc ol { list-style: none; counter-reset: toc; }
@@ -148,165 +98,91 @@
 
   .toc li::before {
     content: counter(toc) ".";
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
-    color: var(--accent);
-    margin-right: 10px;
-    display: inline-block;
-    width: 22px;
+    font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.78rem;
+    color: var(--accent); margin-right: 10px; display: inline-block; width: 22px;
   }
 
   .toc a {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.92rem;
-    color: var(--ink-light);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+    font-family: 'Source Serif 4', serif; font-size: 0.92rem;
+    color: var(--ink-light); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s;
   }
 
   .toc a:hover { border-bottom-color: var(--accent); }
 
   .toc .toc-appendix { counter-increment: none; }
-  .toc .toc-appendix::before {
-    content: "A.";
-    color: var(--ink-dim);
-  }
+  .toc .toc-appendix::before { content: "A."; color: var(--ink-dim); }
 
   .section { margin-bottom: 44px; }
 
   h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 500;
-    font-size: 1.35rem;
-    color: var(--ink);
-    margin-bottom: 18px;
-    border-top: 1px solid var(--rule);
-    padding-top: 20px;
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+    font-size: 1.35rem; color: var(--ink); margin-bottom: 18px;
+    border-top: 1px solid var(--rule); padding-top: 20px;
   }
 
   h2 .sec-num, h2 .app-num {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    margin-right: 10px;
+    font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.8rem; margin-right: 10px;
   }
 
   h2 .sec-num { color: var(--accent); }
   h2 .app-num { color: var(--ink-dim); }
 
   h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 1.05rem;
-    color: var(--ink);
-    margin-bottom: 12px;
-    margin-top: 28px;
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+    font-style: italic; font-size: 1.05rem; color: var(--ink);
+    margin-bottom: 12px; margin-top: 28px;
   }
 
   p { margin-bottom: 16px; text-align: justify; hyphens: auto; }
 
   .eq {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 24px 0;
-    padding: 12px 0;
-    position: relative;
-    overflow-x: auto;
+    display: flex; align-items: center; justify-content: center;
+    margin: 24px 0; padding: 12px 0; position: relative; overflow-x: auto;
   }
 
-  .eq-num {
-    position: absolute;
-    right: 0;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.85rem;
-    color: var(--ink-dim);
-  }
+  .eq-num { position: absolute; right: 0; font-family: 'Source Serif 4', serif; font-size: 0.85rem; color: var(--ink-dim); }
 
   .result-box {
-    background: var(--accent-light);
-    border: 1px solid #c0686844;
-    border-left: 3px solid var(--accent);
-    padding: 20px 24px;
-    margin: 28px 0;
-    border-radius: 0 6px 6px 0;
+    background: var(--accent-light); border: 1px solid #c0686844;
+    border-left: 3px solid var(--accent); padding: 20px 24px;
+    margin: 28px 0; border-radius: 0 6px 6px 0;
   }
 
   .result-box .eq { margin: 12px 0; padding: 8px 0; }
 
   .hex-box {
-    background: var(--hex-light);
-    border: 1px solid #5a6a3a30;
-    border-left: 3px solid var(--hex);
-    padding: 20px 24px;
-    margin: 28px 0;
-    border-radius: 0 6px 6px 0;
+    background: var(--hex-light); border: 1px solid #5a6a3a30;
+    border-left: 3px solid var(--hex); padding: 20px 24px;
+    margin: 28px 0; border-radius: 0 6px 6px 0;
   }
 
   .hex-box .eq { margin: 12px 0; padding: 8px 0; }
 
   .remark-box {
-    background: var(--blue-light);
-    border: 1px solid #2a4a6a22;
-    border-left: 3px solid var(--blue);
-    padding: 20px 24px;
-    margin: 28px 0;
-    border-radius: 0 6px 6px 0;
+    background: var(--blue-light); border: 1px solid #2a4a6a22;
+    border-left: 3px solid var(--blue); padding: 20px 24px;
+    margin: 28px 0; border-radius: 0 6px 6px 0;
   }
 
   .gold-box {
-    background: var(--gold-light);
-    border: 1px solid #9a7a3a30;
-    border-left: 3px solid var(--gold);
-    padding: 20px 24px;
-    margin: 28px 0;
-    border-radius: 0 6px 6px 0;
+    background: var(--gold-light); border: 1px solid #9a7a3a30;
+    border-left: 3px solid var(--gold); padding: 20px 24px;
+    margin: 28px 0; border-radius: 0 6px 6px 0;
   }
 
-  .references {
-    margin-top: 50px;
-    padding-top: 24px;
-    border-top: 2px solid var(--ink);
-  }
-
+  .references { margin-top: 50px; padding-top: 24px; border-top: 2px solid var(--ink); }
   .references h2 { border-top: none; padding-top: 0; }
 
-  .ref-item {
-    font-size: 0.88rem;
-    color: var(--ink-light);
-    margin-bottom: 10px;
-    padding-left: 28px;
-    text-indent: -28px;
-  }
-
+  .ref-item { font-size: 0.88rem; color: var(--ink-light); margin-bottom: 10px; padding-left: 28px; text-indent: -28px; }
   .ref-item a { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); }
 
-  .ref-num {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
-    color: var(--accent);
-    margin-right: 6px;
-  }
+  .ref-num { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.78rem; color: var(--accent); margin-right: 6px; }
 
   a.ref-link { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue); }
 
-  .footer {
-    margin-top: 60px;
-    padding: 30px 0 60px;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-  }
-
-  .footer p {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.75rem;
-    color: var(--ink-dim);
-    text-align: center;
-  }
+  .footer { margin-top: 60px; padding: 30px 0 60px; border-top: 1px solid var(--rule); text-align: center; }
+  .footer p { font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; color: var(--ink-dim); text-align: center; }
 
   @media (max-width: 600px) {
     html { font-size: 16px; }
@@ -338,13 +214,14 @@
       $\approx 1.74$. Rather than absorbing this discrepancy into a varying
       gravitational constant, we interpret it as a structural analogy with the
       cross-term that appears when an orthogonal quadratic form is replaced by
-      the hexagonal (Eisenstein) norm $a^2 + ab + b^2$. Applied to the
-      energy-momentum relation, this cross-term takes the form $mc|\vec{p}|c^2$,
-      the geometric mean of the rest-mass energy squared and the radiation
-      momentum energy squared. We propose this as a kinematic ansatz for dark
-      matter specifically. The connection to the $A_2$ root lattice of SU(3)
-      suggests a link between hexagonal gauge geometry and the GeV mass scale
-      inferred from the Sirag relation via a cosmological geometric mean construction.
+      the hexagonal (Eisenstein) norm $X^2 + XY + Y^2$. Applied to the
+      energy-momentum relation with $X = pc$ and $Y = mc^2$, the cross-term
+      $XY = mc^2 \cdot pc$ is the geometric mean of the rest-mass energy squared
+      and the radiation momentum energy squared. We propose this as an isotropic,
+      CPT-even kinematic ansatz for dark matter, defined in the CMB rest frame.
+      The connection to the $A_2$ root lattice of SU(3) suggests a link between
+      hexagonal gauge geometry and the GeV mass scale inferred from the Sirag
+      relation via a cosmological geometric mean construction.
     </p>
   </div>
 
@@ -367,14 +244,15 @@
     <ol>
       <li><a href="#s1">The standard relativistic quadratic form</a></li>
       <li><a href="#s2">The Eisenstein hexagonal form</a></li>
-      <li><a href="#s3">The cross-term as geometric mean</a></li>
-      <li><a href="#s4">The Sirag coincidence and its discrepancy</a></li>
-      <li><a href="#s5">The discrepancy as structural analogue of the cross-term</a></li>
-      <li><a href="#s6">The dark dispersion relation</a></li>
-      <li><a href="#s7">Connection with the $A_2$ root lattice of SU(3)</a></li>
-      <li><a href="#s8">On Poincaré invariance</a></li>
-      <li><a href="#s9">The GeV mass scale from geometric mean construction</a></li>
-      <li><a href="#s10">Discussion</a></li>
+      <li><a href="#s3">The completed square: hexagonal geometry made visible</a></li>
+      <li><a href="#s4">The cross-term as geometric mean</a></li>
+      <li><a href="#s5">The Sirag coincidence and its discrepancy</a></li>
+      <li><a href="#s6">The discrepancy as structural analogue of the cross-term</a></li>
+      <li><a href="#s7">The dark dispersion relation</a></li>
+      <li><a href="#s8">Connection with the $A_2$ root lattice of SU(3)</a></li>
+      <li><a href="#s9">Symmetry: isotropy, CPT, and the preferred frame</a></li>
+      <li><a href="#s10">The GeV mass scale from geometric mean construction</a></li>
+      <li><a href="#s11">Discussion</a></li>
       <li class="toc-appendix"><a href="#appA">Cosmological abundance justification</a></li>
     </ol>
   </div>
@@ -387,31 +265,22 @@
     four-momentum. For a particle with four-momentum $P^\mu = (E/c,\, \vec{p}\,)$,
     the invariant mass condition is</p>
 
-    <div class="eq">
-      $\displaystyle P_\mu P^\mu = m^2 c^2,$
-      <span class="eq-num">(1)</span>
-    </div>
+    <div class="eq">$\displaystyle P_\mu P^\mu = m^2 c^2,$<span class="eq-num">(1)</span></div>
 
     <p>which gives</p>
 
-    <div class="eq">
-      $\displaystyle E^2 = p^2 c^2 + m^2 c^4,$
-      <span class="eq-num">(2)</span>
-    </div>
+    <div class="eq">$\displaystyle E^2 = p^2 c^2 + m^2 c^4,$<span class="eq-num">(2)</span></div>
 
     <p>where $p = |\vec{p}\,|$ throughout this paper. Setting $X = pc$ and $Y = mc^2$,
     both positive scalars with dimensions of energy, this becomes</p>
 
-    <div class="eq">
-      $\displaystyle E^2 = X^2 + Y^2.$
-      <span class="eq-num">(3)</span>
-    </div>
+    <div class="eq">$\displaystyle E^2 = X^2 + Y^2.$<span class="eq-num">(3)</span></div>
 
     <p>This is the Euclidean norm: the orthogonal quadratic form on two variables.
-    The corresponding lattice is the square lattice $\mathbb{Z}[i]$ of the
-    Gaussian integers. The orthogonality of $X$ and $Y$ reflects the Lorentz
-    invariance of the dispersion relation: momentum and rest-mass energy
-    contribute independently, with no coupling between them.</p>
+    The corresponding lattice is $\mathbb{Z}[i]$, the Gaussian integers.
+    The orthogonality of $X$ and $Y$ reflects the Lorentz invariance of the
+    dispersion relation: momentum energy and rest-mass energy contribute
+    independently, with no coupling between them.</p>
   </div>
 
   <!-- §2 -->
@@ -424,42 +293,76 @@
 
     <div class="hex-box">
       <div class="box-label label-hex">Eisenstein norm</div>
-      <div class="eq">
-        $\displaystyle \|z\|^2 = X^2 + XY + Y^2.$
-        <span class="eq-num">(4)</span>
-      </div>
+      <div class="eq">$\displaystyle \|z\|^2 = X^2 + XY + Y^2.$<span class="eq-num">(4)</span></div>
     </div>
 
     <p>Substituting $X = pc$ and $Y = mc^2$ gives</p>
 
     <div class="hex-box">
       <div class="box-label label-hex">Modified dispersion relation</div>
-      <div class="eq">
-        $\displaystyle E^2 = p^2 c^2 + m^2 c^4 + mc^2 \cdot pc.$
-        <span class="eq-num">(5)</span>
-      </div>
+      <div class="eq">$\displaystyle E^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4.$<span class="eq-num">(5)</span></div>
     </div>
 
     <p>The third term is the cross-term introduced by the $60°$ lattice geometry.
-    Note that because $p = |\vec{p}\,| \geq 0$ and $m \geq 0$, the cross-term
-    is non-negative and well-defined. We treat equation (5) as a
-    <em>kinematic ansatz</em> on the two positive scalar variables $X$ and $Y$.
-    We are not claiming Lorentz covariance for this expression.</p>
+    Because $p = |\vec{p}\,| \geq 0$ and $m \geq 0$, the cross-term is
+    non-negative and well-defined. We treat equation (5) as a kinematic ansatz
+    on the two positive scalar variables $X$ and $Y$. We are not claiming
+    Lorentz covariance for this expression. The symmetry properties are analysed
+    in §9.</p>
   </div>
 
   <!-- §3 -->
   <div class="section" id="s3">
-    <h2><span class="sec-num">3</span>The cross-term as geometric mean</h2>
+    <h2><span class="sec-num">3</span>The completed square: hexagonal geometry made visible</h2>
+
+    <p>The Eisenstein norm admits the completion of the square</p>
+
+    <div class="eq">$\displaystyle X^2 + XY + Y^2 = \left(X + \tfrac{1}{2}Y\right)^2 + \tfrac{3}{4}\,Y^2.$<span class="eq-num">(6)</span></div>
+
+    <p>Substituting back gives</p>
+
+    <div class="hex-box">
+      <div class="box-label label-hex">Completed-square form</div>
+      <div class="eq">$\displaystyle E^2 = \left(pc + \tfrac{1}{2}\,mc^2\right)^2 + \tfrac{3}{4}\,m^2 c^4.$<span class="eq-num">(7)</span></div>
+    </div>
+
+    <p>This makes the hexagonal geometry visually immediate. The standard orthogonal
+    form $E^2 = (pc)^2 + (mc^2)^2$ describes a circle in $(X, Y)$ space. The
+    Eisenstein form describes an ellipse with axes rotated by $30°$. The completed
+    square exhibits this rotation explicitly: the momentum axis has been tilted so
+    that it picks up a component of rest-mass energy ($\tfrac{1}{2}mc^2$), while
+    the mass axis has been rescaled by $\sqrt{3}/2$. The factor
+    $\sqrt{3}/2 = \cos 30°$ is the hexagonal lattice showing its hand.</p>
+
+    <p>At rest ($p = 0$) the expression gives
+    $E^2 = \tfrac{1}{4}m^2c^4 + \tfrac{3}{4}m^2c^4 = m^2c^4$, so $E = mc^2$ is
+    recovered as required. But the decomposition of rest energy is now different:
+    three quarters sits in the pure mass channel and one quarter sits in the
+    shifted momentum channel. The rest mass has an intrinsic momentum-like
+    component. This is a distinctive signature of the hexagonal geometry.</p>
+
+    <div class="gold-box">
+      <div class="box-label label-gold">Geometric reading</div>
+      <p class="box-text">
+        In the orthogonal (Minkowski) case, mass and momentum are perpendicular
+        axes. In the Eisenstein case, they meet at $60°$. The completed square
+        reveals the $30°$ rotation and the $\sqrt{3}/2$ rescaling that
+        distinguish the hexagonal metric from the Euclidean one. The rest
+        energy $mc^2$ is preserved, but its internal decomposition changes.
+      </p>
+    </div>
+  </div>
+
+  <!-- §4 -->
+  <div class="section" id="s4">
+    <h2><span class="sec-num">4</span>The cross-term as geometric mean</h2>
 
     <p>The two diagonal terms in the dispersion relation are $Y^2 = (mc^2)^2$ and
     $X^2 = (pc)^2$. The first is the square of the inertial rest-mass energy.
     The second is the square of the radiation-like momentum energy. Their
     geometric mean is</p>
 
-    <div class="eq">
-      $\displaystyle \sqrt{Y^2 \cdot X^2} = XY = mc^2 \cdot pc.$
-      <span class="eq-num">(6)</span>
-    </div>
+    <div class="eq">$\displaystyle \sqrt{Y^2 \cdot X^2} = XY = mc^2 \cdot pc.$<span class="eq-num">(8)</span></div>
 
     <div class="gold-box">
       <div class="box-label label-gold">Geometric mean structure</div>
@@ -474,217 +377,205 @@
     </div>
   </div>
 
-  <!-- §4 -->
-  <div class="section" id="s4">
-    <h2><span class="sec-num">4</span>The Sirag coincidence and its discrepancy</h2>
+  <!-- §5 -->
+  <div class="section" id="s5">
+    <h2><span class="sec-num">5</span>The Sirag coincidence and its discrepancy</h2>
 
     <p>Let $\alpha$ denote the fine-structure constant,</p>
 
-    <div class="eq">
-      $\displaystyle \alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c} \approx \frac{1}{137.036}.$
-      <span class="eq-num">(7)</span>
-    </div>
+    <div class="eq">$\displaystyle \alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c} \approx \frac{1}{137.036}.$<span class="eq-num">(9)</span></div>
 
     <p>We use the low-energy (Thomson limit) value throughout. Sirag [1] observed
     that two dimensionless quantities are numerically close:</p>
 
-    <div class="eq">
-      $\displaystyle N_\alpha = 2^{1/\alpha} \approx 1.79 \times 10^{41}, \qquad
-      N_G = \frac{\hbar c}{G\, m_p\, m_e} = \frac{m_{\rm Pl}^2}{m_p m_e} \approx 3.11 \times 10^{41}.$
-      <span class="eq-num">(8)</span>
-    </div>
+    <div class="eq">$\displaystyle N_\alpha = 2^{1/\alpha} \approx 1.79 \times 10^{41}, \qquad N_G = \frac{\hbar c}{G\, m_p\, m_e} = \frac{m_{\rm Pl}^2}{m_p m_e} \approx 3.11 \times 10^{41}.$<span class="eq-num">(10)</span></div>
 
     <p>Their ratio is</p>
 
     <div class="result-box">
       <div class="box-label label-accent">Sirag factor</div>
-      <div class="eq">
-        $\displaystyle \frac{N_G}{N_\alpha} \approx 1.74.$
-        <span class="eq-num">(9)</span>
-      </div>
+      <div class="eq">$\displaystyle \frac{N_G}{N_\alpha} \approx 1.74.$<span class="eq-num">(11)</span></div>
     </div>
 
     <p>Taking logarithms,</p>
 
-    <div class="eq">
-      $\displaystyle \ln N_G = \ln N_\alpha + \ln 1.74, \qquad \ln 1.74 \approx 0.554.$
-      <span class="eq-num">(10)</span>
-    </div>
-
-    <p>The discrepancy is an additive contribution of $\approx 0.554$ in the
-    logarithm of the large number.</p>
-  </div>
-
-  <!-- §5 -->
-  <div class="section" id="s5">
-    <h2><span class="sec-num">5</span>The discrepancy as structural analogue of the cross-term</h2>
-
-    <p>The connection between the Sirag factor and the Eisenstein cross-term is a
-    <em>structural analogy</em>, not a derivation. We state it precisely.</p>
-
-    <p>In the orthogonal norm $E^2 = X^2 + Y^2$, the two contributions are
-    independent. In the Eisenstein norm $E^2 = X^2 + XY + Y^2$, the cross-term
-    $XY$ increases the total by the factor</p>
-
-    <div class="eq">
-      $\displaystyle \frac{X^2 + XY + Y^2}{X^2 + Y^2} = 1 + \frac{XY}{X^2 + Y^2}.$
-      <span class="eq-num">(11)</span>
-    </div>
-
-    <p>For two positive quantities $X$ and $Y$ with $X \neq Y$, this ratio lies
-    strictly between 1 and 1.5 (the maximum occurring at $X = Y$). The Sirag
-    factor of 1.74 exceeds this range, so the identification is not exact at
-    the level of the norm ratio.</p>
-
-    <p>However, the analogy operates at the level of structure rather than
-    numerical identity: the Sirag discrepancy is an $\mathcal{O}(1)$ multiplicative
-    correction to a large-number coincidence, and the Eisenstein cross-term is an
-    $\mathcal{O}(1)$ multiplicative correction to a quadratic norm. Both arise from
-    departing from orthogonality. The proposal is that these two departures share
-    a common geometric origin.</p>
-
-    <p>More concretely: if we impose the exact relation $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$
-    and solve for $m_X$, we obtain $m_X / m_p = N_G / N_\alpha \approx 1.74$.
-    The question is then what physics produces this effective mass. The Eisenstein
-    geometry, through the cross-term, provides a candidate mechanism.</p>
+    <div class="eq">$\displaystyle \ln N_G = \ln N_\alpha + \ln 1.74, \qquad \ln 1.74 \approx 0.554.$<span class="eq-num">(12)</span></div>
   </div>
 
   <!-- §6 -->
   <div class="section" id="s6">
-    <h2><span class="sec-num">6</span>The dark dispersion relation</h2>
+    <h2><span class="sec-num">6</span>The discrepancy as structural analogue of the cross-term</h2>
+
+    <p>The connection between the Sirag factor and the Eisenstein cross-term is a
+    structural analogy, not a derivation. We state it precisely.</p>
+
+    <p>In the orthogonal norm $E^2 = X^2 + Y^2$, the two contributions are
+    independent. In the Eisenstein norm $E^2 = X^2 + XY + Y^2$, the cross-term
+    increases the total by the factor</p>
+
+    <div class="eq">$\displaystyle \frac{X^2 + XY + Y^2}{X^2 + Y^2} = 1 + \frac{XY}{X^2 + Y^2}.$<span class="eq-num">(13)</span></div>
+
+    <p>For two positive quantities $X$ and $Y$ with $X \neq Y$, this ratio lies
+    strictly between 1 and 1.5 (the maximum at $X = Y$). The Sirag factor of 1.74
+    exceeds this range, so the identification is not exact at the level of the
+    norm ratio.</p>
+
+    <p>The analogy operates at the level of structure: the Sirag discrepancy is an
+    $\mathcal{O}(1)$ multiplicative correction to a large-number coincidence, and
+    the Eisenstein cross-term is an $\mathcal{O}(1)$ multiplicative correction to
+    a quadratic norm. Both arise from departing from orthogonality. The proposal
+    is that these two departures share a common geometric origin.</p>
+
+    <p>More concretely: imposing $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$ and
+    solving for $m_X$ gives $m_X / m_p = N_G / N_\alpha \approx 1.74$, so
+    $m_X \approx 1.6$ GeV$/c^2$. The question is what physics produces this
+    effective mass. The Eisenstein geometry, through the cross-term, provides a
+    candidate mechanism.</p>
+  </div>
+
+  <!-- §7 -->
+  <div class="section" id="s7">
+    <h2><span class="sec-num">7</span>The dark dispersion relation</h2>
 
     <p>We propose that the kinematic ansatz</p>
 
     <div class="hex-box">
       <div class="box-label label-hex">Dark sector dispersion</div>
-      <div class="eq">
-        $\displaystyle E^2 = X^2 + XY + Y^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4$
-        <span class="eq-num">(12)</span>
-      </div>
+      <div class="eq">$\displaystyle E^2 = X^2 + XY + Y^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4$<span class="eq-num">(14)</span></div>
     </div>
+
+    <p>or equivalently, in completed-square form,</p>
+
+    <div class="eq">$\displaystyle E^2 = \left(pc + \tfrac{1}{2}\,mc^2\right)^2 + \tfrac{3}{4}\,m^2 c^4,$<span class="eq-num">(15)</span></div>
 
     <p>applies specifically to dark matter, and not to baryonic matter.</p>
 
     <p>The cross-term $XY = mc^2 \cdot pc$ couples rest-mass energy and momentum
-    energy. At rest ($p = 0$, so $X = 0$) the relation reduces to $E = mc^2$.
-    For massless particles ($m = 0$, so $Y = 0$) it reduces to $E = pc$. The
-    modification appears only when both mass and momentum are nonzero: that is,
-    for massive particles in motion.</p>
+    energy. At rest ($p = 0$) the relation reduces to $E = mc^2$. For massless
+    particles ($m = 0$) it reduces to $E = pc$. The modification appears only when
+    both mass and momentum are nonzero: for massive particles in motion.</p>
 
     <p>For baryonic matter, the orthogonal dispersion relation $E^2 = p^2c^2 + m^2c^4$
     has been verified to extraordinary precision across particle physics. Any
-    cross-term for baryonic matter is excluded. The claim is therefore
-    sector-specific: the Eisenstein cross-term modifies the kinematics of massive
-    dark particles in motion, while leaving baryonic kinematics and photon
-    propagation untouched.</p>
-
-    <p>The cross-term, as shown in §3, is the geometric mean of the rest-mass
-    energy squared and the momentum energy squared. It interpolates between the
-    two regimes that baryonic physics treats as orthogonal. For dark matter,
-    these regimes are not orthogonal but coupled at $60°$.</p>
+    cross-term for baryonic matter is excluded. The claim is sector-specific: the
+    Eisenstein cross-term modifies the kinematics of massive dark particles in
+    motion, while leaving baryonic kinematics and photon propagation untouched.</p>
   </div>
 
-  <!-- §7 -->
-  <div class="section" id="s7">
-    <h2><span class="sec-num">7</span>Connection with the $A_2$ root lattice of SU(3)</h2>
+  <!-- §8 -->
+  <div class="section" id="s8">
+    <h2><span class="sec-num">8</span>Connection with the $A_2$ root lattice of SU(3)</h2>
 
     <p>The root lattice of SU(3) is the hexagonal $A_2$ lattice. The Cartan matrix
     of SU(3) is</p>
 
-    <div class="eq">
-      $\displaystyle A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}.$
-      <span class="eq-num">(13)</span>
-    </div>
+    <div class="eq">$\displaystyle A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}.$<span class="eq-num">(16)</span></div>
 
     <p>The corresponding quadratic form on the root space is</p>
 
-    <div class="eq">
-      $\displaystyle \tfrac{1}{2}\,\mathbf{x}^T A\,\mathbf{x} = a^2 - ab + b^2.$
-      <span class="eq-num">(14)</span>
-    </div>
+    <div class="eq">$\displaystyle \tfrac{1}{2}\,\mathbf{x}^T A\,\mathbf{x} = a^2 - ab + b^2.$<span class="eq-num">(17)</span></div>
 
     <p>Under the reflection $b \to -b$ this becomes $a^2 + ab + b^2$, the Eisenstein
     norm. The lattice generated is unchanged by this reflection: both forms
     represent the same $A_2$ hexagonal lattice up to basis choice.</p>
 
     <p>QCD, with gauge group SU(3)$_c$, generates the dominant contribution to the
-    proton mass via confinement at scale $\Lambda_{\rm QCD} \sim 200$ MeV. A dark
-    confining gauge sector with SU(3)-like structure would naturally inherit the
-    hexagonal geometry of the $A_2$ root lattice.</p>
+    proton mass via confinement at scale $\Lambda_{\rm QCD} \sim 200$ MeV.
+    A dark confining gauge sector with SU(3)-like structure would naturally
+    inherit the hexagonal geometry of the $A_2$ root lattice.</p>
 
     <div class="gold-box">
       <div class="box-label label-gold">Key observation</div>
       <p class="box-text">
         The Eisenstein cross-term in the dispersion relation and the hexagonal root
-        lattice of SU(3) share the same mathematical structure.
-        The cross-term is not imposed <em>ad hoc</em>. It is the natural kinematic
-        form associated with a gauge symmetry whose root system is hexagonal.
-      </p>
-    </div>
-  </div>
-
-  <!-- §8 -->
-  <div class="section" id="s8">
-    <h2><span class="sec-num">8</span>On Poincaré invariance</h2>
-
-    <p>The cross-term $XY = mc^2 \cdot pc$ is not a Lorentz scalar. Under a boost,
-    $m$ is invariant but $p = |\vec{p}\,|$ is not, so $XY$ is not
-    boost-invariant. The kinematic ansatz (12) therefore breaks Poincaré symmetry.</p>
-
-    <p>This is a strong claim. Poincaré invariance is foundational to relativistic
-    quantum field theory. The CPT theorem depends on it. No violation has been
-    observed in any sector, baryonic or otherwise.</p>
-
-    <div class="remark-box">
-      <div class="box-label label-blue">On the status of Poincaré invariance in the dark sector</div>
-      <p class="box-text">
-        We do not argue that Poincaré invariance is wrong. We note that it has been
-        tested exclusively with electromagnetically coupled matter. The CPT theorem
-        applies to quantum fields on a Poincaré-invariant background. Whether dark
-        matter is described by such fields is an assumption, not a measurement.
-      </p>
-      <p class="box-text">
-        The ansatz (12) is not directly constrained by laboratory Lorentz tests, which
-        probe baryonic and leptonic sectors. It is, however, constrained indirectly by
-        cosmological observables: structure formation, CMB anisotropy, and limits on
-        dark matter self-interaction and free-streaming all depend on dark matter
-        kinematics. A full confrontation with cosmological data is beyond the scope
-        of this heuristic note, but would be required to establish or exclude the
-        ansatz observationally.
-      </p>
-      <p class="box-text">
-        We note that the ansatz vanishes for massless particles, vanishes at rest,
-        and preserves spatial isotropy (since $p = |\vec{p}\,|$ is
-        rotation-invariant). It breaks only boost invariance, and only for massive
-        dark particles in motion.
+        lattice of SU(3) share the same mathematical structure. The cross-term is
+        not imposed <em>ad hoc</em>. It is the natural kinematic form associated
+        with a gauge symmetry whose root system is hexagonal.
       </p>
     </div>
   </div>
 
   <!-- §9 -->
   <div class="section" id="s9">
-    <h2><span class="sec-num">9</span>The GeV mass scale from geometric mean construction</h2>
+    <h2><span class="sec-num">9</span>Symmetry: isotropy, CPT, and the preferred frame</h2>
+
+    <p>We treat the modification as an isotropic, CPT-even deformation defined in a
+    preferred cosmological frame: the CMB rest frame.</p>
+
+    <h3>9.1 &ensp; Spatial isotropy</h3>
+
+    <p>The cross-term depends only on $p = |\vec{p}\,|$ and $m$, both of which
+    are invariant under spatial rotations. The ansatz therefore preserves the
+    full rotation group SO(3). It breaks only Lorentz boost invariance.</p>
+
+    <h3>9.2 &ensp; CPT behaviour</h3>
+
+    <p>Under the discrete transformations individually: $m$ is invariant under
+    C, P, and T. The magnitude $|\vec{p}\,|$ is invariant under C (charge
+    conjugation does not affect momentum), invariant under P (parity flips
+    $\vec{p} \to -\vec{p}$ but not $|\vec{p}\,|$), and invariant under T
+    (time reversal flips $\vec{p} \to -\vec{p}$ but not $|\vec{p}\,|$).
+    Therefore the cross-term $mc^2 \cdot pc = mc^2 \cdot |\vec{p}\,|c$ is
+    invariant under each of C, P, and T separately, and hence under CPT.</p>
+
+    <div class="remark-box">
+      <div class="box-label label-blue">On the CPT theorem</div>
+      <p class="box-text">
+        The standard CPT theorem (Lüders, Pauli, Jost) derives CPT invariance
+        from Lorentz invariance together with locality and unitarity. Since the
+        present ansatz breaks Lorentz boost invariance, the theorem does not apply.
+        CPT invariance of the dark sector is therefore not guaranteed by the
+        formalism. However, the ansatz is CPT-even at the level of the one-particle
+        dispersion relation, as shown above. We impose CPT as a dark-sector symmetry
+        assumption rather than deriving it.
+      </p>
+      <p class="box-text">
+        This is consistent with the approach of Boyle, Finn, and Turok [5], where
+        CPT is a cosmological boundary condition rather than a consequence of local
+        field theory.
+      </p>
+    </div>
+
+    <h3>9.3 &ensp; The preferred frame</h3>
+
+    <p>A boost-violating but rotationally invariant ansatz defines a preferred frame.
+    The natural choice is the CMB rest frame, which is already a preferred
+    cosmological frame operationally defined by the CMB dipole anisotropy. In this
+    frame the dark matter dispersion relation takes the form (14). In a boosted
+    frame the relation would acquire velocity-dependent corrections. All
+    cosmological observables (structure formation, CMB anisotropy, halo dynamics)
+    are conventionally computed in or near the CMB frame, so the preferred-frame
+    aspect does not introduce additional ambiguity for cosmological predictions.</p>
+
+    <h3>9.4 &ensp; Indirect constraints</h3>
+
+    <p>The ansatz is not directly constrained by laboratory Lorentz tests, which probe
+    baryonic and leptonic sectors exclusively. It is, however, constrained
+    indirectly by cosmological observables: structure formation, CMB anisotropy
+    power spectra, limits on dark matter self-interaction and free-streaming all
+    depend on dark matter kinematics. A full confrontation with cosmological data
+    is beyond the scope of this heuristic note but would be required to establish
+    or exclude the ansatz observationally.</p>
+  </div>
+
+  <!-- §10 -->
+  <div class="section" id="s10">
+    <h2><span class="sec-num">10</span>The GeV mass scale from geometric mean construction</h2>
 
     <p>The Sirag factor of 1.74 can be absorbed by defining an effective gravitating
     mass scale $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$. This is the mass
-    that makes the relation $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$ exact.</p>
+    that makes $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$ exact.</p>
 
     <p>Decomposing $m_X$ into baryonic and dark contributions via the mass-fraction
     weighted geometric mean</p>
 
-    <div class="eq">
-      $\displaystyle m_X = m_p^{\,1-f}\; m_{\rm dm}^{\,f}, \qquad f \approx 0.84,$
-      <span class="eq-num">(15)</span>
-    </div>
+    <div class="eq">$\displaystyle m_X = m_p^{\,1-f}\; m_{\rm dm}^{\,f}, \qquad f \approx 0.84,$<span class="eq-num">(18)</span></div>
 
     <p>and solving for $m_{\rm dm}$ yields</p>
 
     <div class="result-box">
       <div class="box-label label-accent">Inferred dark matter mass</div>
-      <div class="eq">
-        $\displaystyle m_{\rm dm} = m_p \left(\frac{m_X}{m_p}\right)^{1/f} \approx 2\;\text{GeV}/c^2.$
-        <span class="eq-num">(16)</span>
-      </div>
+      <div class="eq">$\displaystyle m_{\rm dm} = m_p \left(\frac{m_X}{m_p}\right)^{1/f} \approx 2\;\text{GeV}/c^2.$<span class="eq-num">(19)</span></div>
     </div>
 
     <p>This is the same GeV scale generated by QCD confinement. Under the present
@@ -695,21 +586,23 @@
     average over all baryon and lepton species) is given in Appendix A.</p>
   </div>
 
-  <!-- §10 -->
-  <div class="section" id="s10">
-    <h2><span class="sec-num">10</span>Discussion</h2>
+  <!-- §11 -->
+  <div class="section" id="s11">
+    <h2><span class="sec-num">11</span>Discussion</h2>
 
     <p>The chain of reasoning is as follows.</p>
 
     <p><strong>(i)</strong> The Sirag factor $N_G / N_\alpha \approx 1.74$ is an
     $\mathcal{O}(1)$ multiplicative correction to a large-number coincidence.
-    The Eisenstein cross-term is an $\mathcal{O}(1)$ multiplicative correction
-    to a quadratic norm. We propose these share a common geometric origin,
-    while acknowledging this is a structural analogy rather than a derivation.</p>
+    The Eisenstein cross-term is an $\mathcal{O}(1)$ multiplicative correction to
+    a quadratic norm. We propose these share a common geometric origin, while
+    acknowledging this is a structural analogy rather than a derivation.</p>
 
     <p><strong>(ii)</strong> The hexagonal quadratic form $X^2 + XY + Y^2$ is the Eisenstein
     norm, native to the $A_2$ root lattice. The cross-term $XY$ is the geometric
-    mean of the rest-mass energy squared and the momentum energy squared.</p>
+    mean of the rest-mass energy squared and the momentum energy squared. The
+    completed-square form reveals the $30°$ rotation and $\sqrt{3}/2$ rescaling
+    characteristic of the hexagonal metric.</p>
 
     <p><strong>(iii)</strong> The $A_2$ lattice is the root lattice of SU(3). QCD, with gauge
     group SU(3)$_c$, generates the proton mass at the GeV scale via confinement. A
@@ -720,11 +613,12 @@
     fraction $f \approx 0.84$, yields $m_{\rm dm} \approx 2$ GeV, consistent with
     a dark confinement scale comparable to $\Lambda_{\rm QCD}$.</p>
 
-    <p><strong>(v)</strong> The kinematic ansatz breaks Poincaré symmetry. This is a strong
-    claim. It is not directly constrained by existing laboratory tests (which probe
-    only electromagnetically coupled matter), but it is indirectly constrained by
-    cosmological observables. A confrontation with structure formation data is
-    required and is beyond the scope of this note.</p>
+    <p><strong>(v)</strong> The kinematic ansatz is isotropic and CPT-even, defined in the
+    CMB rest frame. It breaks Lorentz boost invariance. The standard CPT theorem
+    does not apply, and CPT is imposed as a dark-sector symmetry assumption. The
+    ansatz is not directly constrained by laboratory Lorentz tests but is
+    indirectly constrained by cosmological observables. A confrontation with
+    structure formation data is required and is beyond the scope of this note.</p>
 
     <div class="gold-box">
       <div class="box-label label-gold">Summary</div>
@@ -734,7 +628,9 @@
         The mass scale it produces is the confinement scale.
         The cross-term is the geometric mean of the rest-mass and momentum
         contributions to the dispersion relation.
-        These four observations are not independent.
+        The completed-square form reveals the $30°$ rotation and $\cos 30°$
+        rescaling of the hexagonal metric.
+        These observations are not independent.
       </p>
     </div>
 
@@ -760,11 +656,7 @@
     $\exp(-\Delta mc^2 / kT)$. For the lightest strange baryon ($\Lambda$, mass gap
     $\Delta mc^2 \approx 177$ MeV):</p>
 
-    <div class="eq">
-      $\displaystyle \exp\!\left(-\frac{177\;\text{MeV}}{2.3\times10^{-4}\;\text{eV}}\right)
-      \approx \exp(-7.7\times10^{5}) \approx 0.$
-      <span class="eq-num">(A.1)</span>
-    </div>
+    <div class="eq">$\displaystyle \exp\!\left(-\frac{177\;\text{MeV}}{2.3\times10^{-4}\;\text{eV}}\right) \approx \exp(-7.7\times10^{5}) \approx 0.$<span class="eq-num">(A.1)</span></div>
 
     <p>The cosmic baryon population consists entirely of nucleons. Primordial helium
     synthesis fixes the mixture at approximately 87.5% protons and 12.5% neutrons
@@ -772,8 +664,8 @@
 
     <p>The number-weighted geometric mean nucleon mass is
     $m_N = m_p^{0.875}\, m_n^{0.125}$. Since $m_n / m_p \approx 1.00138$,
-    this gives $m_N / m_p \approx 1.00017$, a correction at the level of
-    $\mathcal{O}(10^{-4})$, negligible for the large-number relations.</p>
+    this gives $m_N / m_p \approx 1.00017$, a correction at $\mathcal{O}(10^{-4})$,
+    negligible for the large-number relations.</p>
 
     <h3>A.2 &ensp; Charged lepton abundances</h3>
 
@@ -786,15 +678,15 @@
     628 MeV and 46 MeV respectively. Both are far too heavy to produce the correct
     order of magnitude in the gravitational coupling. The electron appears not
     because it is an "average lepton" but because it is the only cosmologically
-    persistent one.</p>
+    persistent charged lepton.</p>
 
     <h3>A.3 &ensp; Neutrino abundances</h3>
 
     <p>The cosmic neutrino background contains approximately 112 neutrinos per cm$^3$
     per flavour ($\nu + \bar{\nu}$), giving roughly 336 total [3]. These outnumber
     baryons by a factor of order $10^9$. However, neutrino masses are of order
-    10 to 50 meV, so the neutrino contribution to any gravitational coupling
-    of the form $Gm_1 m_2 / \hbar c$ is negligible compared to the nucleon-electron
+    10 to 50 meV, so the neutrino contribution to any gravitational coupling of
+    the form $Gm_1 m_2 / \hbar c$ is negligible compared to the nucleon-electron
     product.</p>
 
     <p>A number-weighted lepton average would be dominated by neutrino masses and
@@ -806,10 +698,10 @@
     <h3>A.4 &ensp; Number densities and nucleon count</h3>
 
     <div class="remark-box">
-      <div class="box-label label-blue">Present-day number densities (order of magnitude)</div>
+      <div class="box-label label-blue">Present-day number densities (order of magnitude, from [3])</div>
       <p class="box-text">
         Baryons: $n_b \sim 2.5 \times 10^{-7}$ cm$^{-3}$
-        (of which $\sim$87.5% protons, $\sim$12.5% neutrons) [3]
+        (of which $\sim$87.5% protons, $\sim$12.5% neutrons)
       </p>
       <p class="box-text">
         Electrons: $n_e \sim 2.2 \times 10^{-7}$ cm$^{-3}$
@@ -817,7 +709,7 @@
       </p>
       <p class="box-text">
         Neutrinos: $n_\nu \sim 336$ cm$^{-3}$
-        (all flavours, $\nu + \bar{\nu}$) [3]
+        (all flavours, $\nu + \bar{\nu}$)
       </p>
       <p class="box-text">
         Neutrino-to-baryon ratio: $\sim 1.3 \times 10^{9}$
@@ -835,36 +727,12 @@
   <!-- REFERENCES -->
   <div class="references">
     <h2>References</h2>
-    <p class="ref-item">
-      <span class="ref-num">[1]</span>
-      Sirag, S.-P. (1983). Physical constants as cosmological constraints.
-      <em>Int. J. Theor. Phys.</em>, <strong>22</strong>(12), 1067–1089.
-    </p>
-    <p class="ref-item">
-      <span class="ref-num">[2]</span>
-      Dirac, P. A. M. (1937). The cosmological constants. <em>Nature</em>, <strong>139</strong>, 323.
-    </p>
-    <p class="ref-item">
-      <span class="ref-num">[3]</span>
-      Planck Collaboration (2020). Planck 2018 results. VI. Cosmological parameters.
-      <em>Astron. Astrophys.</em>, <strong>641</strong>, A6.
-    </p>
-    <p class="ref-item">
-      <span class="ref-num">[4]</span>
-      Mattingly, D. (2005). Modern tests of Lorentz invariance.
-      <em>Living Rev. Relativ.</em>, <strong>8</strong>, 5.
-    </p>
-    <p class="ref-item">
-      <span class="ref-num">[5]</span>
-      Boyle, L., Finn, K., Turok, N. (2018). CPT-symmetric universe.
-      <em>Phys. Rev. Lett.</em>, <strong>121</strong>, 251301.
-    </p>
-    <p class="ref-item">
-      <span class="ref-num">[6]</span>
-      McCulloch-James, L. (2025). Interactive overview of dark matter and equivalence assumptions.
-      <a href="https://leelemacjames.github.io/darkMattermindMap/">
-      leelemacjames.github.io/darkMattermindMap</a>
-    </p>
+    <p class="ref-item"><span class="ref-num">[1]</span> Sirag, S.-P. (1983). Physical constants as cosmological constraints. <em>Int. J. Theor. Phys.</em>, <strong>22</strong>(12), 1067–1089.</p>
+    <p class="ref-item"><span class="ref-num">[2]</span> Dirac, P. A. M. (1937). The cosmological constants. <em>Nature</em>, <strong>139</strong>, 323.</p>
+    <p class="ref-item"><span class="ref-num">[3]</span> Planck Collaboration (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astron. Astrophys.</em>, <strong>641</strong>, A6.</p>
+    <p class="ref-item"><span class="ref-num">[4]</span> Mattingly, D. (2005). Modern tests of Lorentz invariance. <em>Living Rev. Relativ.</em>, <strong>8</strong>, 5.</p>
+    <p class="ref-item"><span class="ref-num">[5]</span> Boyle, L., Finn, K., Turok, N. (2018). CPT-symmetric universe. <em>Phys. Rev. Lett.</em>, <strong>121</strong>, 251301.</p>
+    <p class="ref-item"><span class="ref-num">[6]</span> McCulloch-James, L. (2025). Interactive overview of dark matter and equivalence assumptions. <a href="https://leelemacjames.github.io/darkMattermindMap/">leelemacjames.github.io/darkMattermindMap</a></p>
   </div>
 
   <div class="footer">
@@ -885,4 +753,5 @@
 
 </body>
 </html>
+
 
