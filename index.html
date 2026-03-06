@@ -67,6 +67,14 @@
 
   .title-block h1 em { font-style: italic; color: var(--hex); }
 
+  .author-line {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+
   .date-line {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
@@ -78,28 +86,61 @@
     background: var(--hex-light);
     border-left: 3px solid var(--hex);
     padding: 24px 28px;
-    margin: 40px 0 50px;
+    margin: 40px 0 40px;
     border-radius: 0 6px 6px 0;
   }
 
-  .abstract-label, .toc-label {
+  .box-label {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
-  .abstract-label { color: var(--hex); }
-  .toc-label { color: var(--ink-dim); margin-bottom: 14px; }
+  .label-accent { color: var(--accent); }
+  .label-hex { color: var(--hex); }
+  .label-blue { color: var(--blue); }
+  .label-gold { color: var(--gold); }
+  .label-dim { color: var(--ink-dim); }
 
-  .abstract p { font-size: 0.92rem; line-height: 1.7; color: var(--ink-light); }
+  .abstract p, .box-text { font-size: 0.92rem; line-height: 1.7; color: var(--ink-light); margin: 0; }
+  .box-text + .box-text { margin-top: 12px; }
+
+  /* Notation box */
+  .notation-box {
+    background: #f4f2ec;
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    margin: 0 0 50px;
+    border-radius: 6px;
+    column-count: 2;
+    column-gap: 32px;
+  }
+
+  .notation-box p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 4px;
+    text-align: left;
+    break-inside: avoid;
+  }
 
   .toc {
     margin: 0 0 50px;
     padding: 24px 0;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .toc-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 14px;
   }
 
   .toc ol { list-style: none; counter-reset: toc; }
@@ -127,15 +168,10 @@
 
   .toc a:hover { border-bottom-color: var(--accent); }
 
+  .toc .toc-appendix { counter-increment: none; }
   .toc .toc-appendix::before {
     content: "A.";
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
     color: var(--ink-dim);
-    margin-right: 10px;
-    display: inline-block;
-    width: 22px;
   }
 
   .section { margin-bottom: 44px; }
@@ -150,21 +186,15 @@
     padding-top: 20px;
   }
 
-  h2 .sec-num {
+  h2 .sec-num, h2 .app-num {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     font-size: 0.8rem;
-    color: var(--accent);
     margin-right: 10px;
   }
 
-  h2 .app-num {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: var(--ink-dim);
-    margin-right: 10px;
-  }
+  h2 .sec-num { color: var(--accent); }
+  h2 .app-num { color: var(--ink-dim); }
 
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
@@ -236,22 +266,6 @@
     border-radius: 0 6px 6px 0;
   }
 
-  .box-label {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .label-accent { color: var(--accent); }
-  .label-hex { color: var(--hex); }
-  .label-blue { color: var(--blue); }
-  .label-gold { color: var(--gold); }
-
-  .box-text { font-size: 0.92rem; color: var(--ink-light); margin: 0; }
-
   .references {
     margin-top: 50px;
     padding-top: 24px;
@@ -299,6 +313,7 @@
     .page { padding: 0 20px; }
     .title-block { padding: 40px 0 30px; }
     .title-block h1 { font-size: 1.5rem; }
+    .notation-box { column-count: 1; }
   }
 </style>
 </head>
@@ -309,41 +324,58 @@
   <div class="title-block">
     <div class="journal-line">Working Paper · Mathematical Physics &amp; Cosmology</div>
     <h1><em>Eisenstein</em> Geometry and the Dark Dispersion Relation: a Cross-Term Interpretation of the Sirag Factor</h1>
-    <div class="date-line">Lee McCulloch-James, Draft, 2026</div>
+    <div class="author-line">Lee McCulloch-James</div>
+    <div class="date-line">Draft, 2026</div>
   </div>
 
+  <!-- ABSTRACT -->
   <div class="abstract">
-    <div class="abstract-label">Abstract</div>
+    <div class="box-label label-hex">Abstract</div>
     <p>
-      The Sirag large-number coincidence equates $2^{1/\alpha}$ with the inverse gravitational
-      coupling $\hbar c / G m_p m_e$, up to a residual factor of $\approx 1.74$. Rather than
-      absorbing this discrepancy into a varying gravitational constant, we interpret it as
-      the signature of a hexagonal (Eisenstein) geometry in the energy-momentum relation.
-      The standard Minkowski dispersion relation $E^2 = p^2 c^2 + m^2 c^4$ corresponds to an
-      orthogonal quadratic form. Replacing this with the Eisenstein norm $a^2 + ab + b^2$
-      introduces a cross-term $mpc^3$ that modifies the dispersion relation for dark matter
-      specifically. The cross-term is the geometric mean of the two terms it interpolates:
-      inertial rest-mass energy squared and photon-like momentum energy squared.
-      The connection to the $A_2$ root lattice of SU(3) suggests a link between the hexagonal
-      geometry of a dark confining gauge sector and the GeV mass scale inferred from the
-      Sirag relation.
+      The Sirag large-number coincidence equates $2^{1/\alpha}$, where
+      $\alpha \approx 1/137$ is the fine-structure constant, with the inverse
+      gravitational coupling $\hbar c / G m_p m_e$, up to a residual factor of
+      $\approx 1.74$. Rather than absorbing this discrepancy into a varying
+      gravitational constant, we interpret it as a structural analogy with the
+      cross-term that appears when an orthogonal quadratic form is replaced by
+      the hexagonal (Eisenstein) norm $a^2 + ab + b^2$. Applied to the
+      energy-momentum relation, this cross-term takes the form $mc|\vec{p}|c^2$,
+      the geometric mean of the rest-mass energy squared and the radiation
+      momentum energy squared. We propose this as a kinematic ansatz for dark
+      matter specifically. The connection to the $A_2$ root lattice of SU(3)
+      suggests a link between hexagonal gauge geometry and the GeV mass scale
+      inferred from the Sirag relation via a cosmological geometric mean construction.
     </p>
   </div>
 
+  <!-- NOTATION -->
+  <div class="notation-box">
+    <div class="box-label label-dim">Notation and conventions</div>
+    <p>$\alpha = e^2 / 4\pi\epsilon_0 \hbar c \approx 1/137.036$: fine-structure constant (low-energy, Thomson limit)</p>
+    <p>$m_e, m_p, m_n$: electron, proton, neutron masses</p>
+    <p>$G, \hbar, c$: gravitational constant, reduced Planck constant, speed of light</p>
+    <p>$m_{\rm Pl} = \sqrt{\hbar c / G}$: Planck mass</p>
+    <p>$\Omega_b, \Omega_c$: baryon and cold dark matter density parameters</p>
+    <p>$f = \Omega_c / (\Omega_c + \Omega_b) \approx 0.84$: dark fraction of total matter</p>
+    <p>$p = |\vec{p}\,|$: magnitude of 3-momentum (scalar, non-negative)</p>
+    <p>$X = pc,\; Y = mc^2$: positive scalar energy-dimensioned variables</p>
+  </div>
+
+  <!-- TOC -->
   <div class="toc">
     <div class="toc-label">Contents</div>
     <ol>
       <li><a href="#s1">The standard relativistic quadratic form</a></li>
       <li><a href="#s2">The Eisenstein hexagonal form</a></li>
       <li><a href="#s3">The cross-term as geometric mean</a></li>
-      <li><a href="#s4">The Sirag discrepancy in logarithmic space</a></li>
-      <li><a href="#s5">Interpreting the extra factor as the cross-term</a></li>
+      <li><a href="#s4">The Sirag coincidence and its discrepancy</a></li>
+      <li><a href="#s5">The discrepancy as structural analogue of the cross-term</a></li>
       <li><a href="#s6">The dark dispersion relation</a></li>
       <li><a href="#s7">Connection with the $A_2$ root lattice of SU(3)</a></li>
       <li><a href="#s8">On Poincaré invariance</a></li>
       <li><a href="#s9">The GeV mass scale from geometric mean construction</a></li>
       <li><a href="#s10">Discussion</a></li>
-      <li class="toc-appendix" style="counter-increment:none"><a href="#appA">Cosmological abundance justification</a></li>
+      <li class="toc-appendix"><a href="#appA">Cosmological abundance justification</a></li>
     </ol>
   </div>
 
@@ -351,217 +383,242 @@
   <div class="section" id="s1">
     <h2><span class="sec-num">1</span>The standard relativistic quadratic form</h2>
 
-    <p>The relativistic dispersion relation</p>
+    <p>The relativistic dispersion relation follows from the Minkowski norm of the
+    four-momentum. For a particle with four-momentum $P^\mu = (E/c,\, \vec{p}\,)$,
+    the invariant mass condition is</p>
 
     <div class="eq">
-      $\displaystyle E^2 = p^2 c^2 + m^2 c^4$
+      $\displaystyle P_\mu P^\mu = m^2 c^2,$
       <span class="eq-num">(1)</span>
     </div>
 
-    <p>corresponds to an orthogonal quadratic form. Setting $a = pc$ and $b = mc^2$, we have</p>
+    <p>which gives</p>
 
     <div class="eq">
-      $\displaystyle E^2 = a^2 + b^2.$
+      $\displaystyle E^2 = p^2 c^2 + m^2 c^4,$
       <span class="eq-num">(2)</span>
     </div>
 
-    <p>This is the norm on $\mathbb{Z}[i]$, the Gaussian integers. The underlying geometry is
-    square: basis vectors at $90°$. The energy-momentum relation inherits Lorentz invariance
-    from the rotational symmetry of the Euclidean plane under Wick rotation.</p>
+    <p>where $p = |\vec{p}\,|$ throughout this paper. Setting $X = pc$ and $Y = mc^2$,
+    both positive scalars with dimensions of energy, this becomes</p>
+
+    <div class="eq">
+      $\displaystyle E^2 = X^2 + Y^2.$
+      <span class="eq-num">(3)</span>
+    </div>
+
+    <p>This is the Euclidean norm: the orthogonal quadratic form on two variables.
+    The corresponding lattice is the square lattice $\mathbb{Z}[i]$ of the
+    Gaussian integers. The orthogonality of $X$ and $Y$ reflects the Lorentz
+    invariance of the dispersion relation: momentum and rest-mass energy
+    contribute independently, with no coupling between them.</p>
   </div>
 
   <!-- §2 -->
   <div class="section" id="s2">
     <h2><span class="sec-num">2</span>The Eisenstein hexagonal form</h2>
 
-    <p>If the underlying geometry is hexagonal, with basis vectors at $60°$, the norm becomes
-    the Eisenstein form</p>
+    <p>If the underlying geometry is hexagonal, with basis vectors at $60°$, the norm
+    on the lattice $\mathbb{Z}[\omega]$ of Eisenstein integers
+    ($\omega = e^{2\pi i/3}$) becomes</p>
 
     <div class="hex-box">
       <div class="box-label label-hex">Eisenstein norm</div>
       <div class="eq">
-        $\displaystyle \|z\|^2 = a^2 + ab + b^2.$
-        <span class="eq-num">(3)</span>
-      </div>
-    </div>
-
-    <p>This is the norm on $\mathbb{Z}[\omega]$, the Eisenstein integers, where
-    $\omega = e^{2\pi i/3}$ is a primitive cube root of unity. Substituting the
-    relativistic identifications $a = pc$, $b = mc^2$ gives</p>
-
-    <div class="hex-box">
-      <div class="box-label label-hex">Modified dispersion relation</div>
-      <div class="eq">
-        $\displaystyle E^2 = p^2 c^2 + m^2 c^4 + mpc^3.$
+        $\displaystyle \|z\|^2 = X^2 + XY + Y^2.$
         <span class="eq-num">(4)</span>
       </div>
     </div>
 
+    <p>Substituting $X = pc$ and $Y = mc^2$ gives</p>
+
+    <div class="hex-box">
+      <div class="box-label label-hex">Modified dispersion relation</div>
+      <div class="eq">
+        $\displaystyle E^2 = p^2 c^2 + m^2 c^4 + mc^2 \cdot pc.$
+        <span class="eq-num">(5)</span>
+      </div>
+    </div>
+
     <p>The third term is the cross-term introduced by the $60°$ lattice geometry.
-    It couples momentum and rest mass in a way that has no analogue in the
-    standard Minkowski framework.</p>
+    Note that because $p = |\vec{p}\,| \geq 0$ and $m \geq 0$, the cross-term
+    is non-negative and well-defined. We treat equation (5) as a
+    <em>kinematic ansatz</em> on the two positive scalar variables $X$ and $Y$.
+    We are not claiming Lorentz covariance for this expression.</p>
   </div>
 
   <!-- §3 -->
   <div class="section" id="s3">
     <h2><span class="sec-num">3</span>The cross-term as geometric mean</h2>
 
-    <p>The cross-term $mpc^3$ admits a simple interpretation. The two "diagonal" terms
-    in the dispersion relation are</p>
+    <p>The two diagonal terms in the dispersion relation are $Y^2 = (mc^2)^2$ and
+    $X^2 = (pc)^2$. The first is the square of the inertial rest-mass energy.
+    The second is the square of the radiation-like momentum energy. Their
+    geometric mean is</p>
 
     <div class="eq">
-      $\displaystyle (mc^2)^2 \quad \text{and} \quad (pc)^2.$
-      <span class="eq-num">(5)</span>
-    </div>
-
-    <p>The first is the square of the inertial rest-mass energy. The second is the square
-    of the photon-like momentum energy. Their geometric mean is</p>
-
-    <div class="eq">
-      $\displaystyle \sqrt{(mc^2)^2 \cdot (pc)^2} \;=\; mc^2 \cdot pc \;=\; mpc^3.$
+      $\displaystyle \sqrt{Y^2 \cdot X^2} = XY = mc^2 \cdot pc.$
       <span class="eq-num">(6)</span>
     </div>
 
     <div class="gold-box">
       <div class="box-label label-gold">Geometric mean structure</div>
       <p class="box-text">
-        The Eisenstein cross-term interpolates the rest-mass energy squared and the
-        radiation momentum energy squared. It sits between the massive
-        ($p = 0$) and massless ($m = 0$) limits, coupling the two regimes.
+        The Eisenstein cross-term is exactly the geometric mean of the two
+        quantities it interpolates: rest-mass energy squared and radiation
+        momentum energy squared. It sits between the massive ($p = 0$) and
+        massless ($m = 0$) limits, coupling the two regimes. In any quadratic
+        form $X^2 + \lambda XY + Y^2$, the cross-term $XY$ is the geometric
+        mean of $X^2$ and $Y^2$. The Eisenstein geometry selects $\lambda = 1$.
       </p>
     </div>
   </div>
 
   <!-- §4 -->
   <div class="section" id="s4">
-    <h2><span class="sec-num">4</span>The Sirag discrepancy in logarithmic space</h2>
+    <h2><span class="sec-num">4</span>The Sirag coincidence and its discrepancy</h2>
 
-    <p>Recall the two large dimensionless numbers</p>
+    <p>Let $\alpha$ denote the fine-structure constant,</p>
 
     <div class="eq">
-      $\displaystyle N_\alpha = 2^{1/\alpha} \approx 1.79 \times 10^{41}, \qquad
-      N_G = \frac{\hbar c}{G\, m_p\, m_e} \approx 3.11 \times 10^{41}.$
+      $\displaystyle \alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c} \approx \frac{1}{137.036}.$
       <span class="eq-num">(7)</span>
     </div>
 
-    <p>Their ratio is $N_G / N_\alpha \approx 1.74$. Taking logarithms</p>
+    <p>We use the low-energy (Thomson limit) value throughout. Sirag [1] observed
+    that two dimensionless quantities are numerically close:</p>
 
     <div class="eq">
-      $\displaystyle \ln N_G = \ln N_\alpha + \ln 1.74.$
+      $\displaystyle N_\alpha = 2^{1/\alpha} \approx 1.79 \times 10^{41}, \qquad
+      N_G = \frac{\hbar c}{G\, m_p\, m_e} = \frac{m_{\rm Pl}^2}{m_p m_e} \approx 3.11 \times 10^{41}.$
       <span class="eq-num">(8)</span>
     </div>
 
-    <p>Numerically</p>
+    <p>Their ratio is</p>
 
-    <div class="eq">
-      $\displaystyle \ln 1.74 \approx 0.554.$
-      <span class="eq-num">(9)</span>
+    <div class="result-box">
+      <div class="box-label label-accent">Sirag factor</div>
+      <div class="eq">
+        $\displaystyle \frac{N_G}{N_\alpha} \approx 1.74.$
+        <span class="eq-num">(9)</span>
+      </div>
     </div>
 
-    <p>The Sirag discrepancy corresponds to an additive contribution in the
-    logarithmic norm of magnitude $\approx 0.554$.</p>
+    <p>Taking logarithms,</p>
+
+    <div class="eq">
+      $\displaystyle \ln N_G = \ln N_\alpha + \ln 1.74, \qquad \ln 1.74 \approx 0.554.$
+      <span class="eq-num">(10)</span>
+    </div>
+
+    <p>The discrepancy is an additive contribution of $\approx 0.554$ in the
+    logarithm of the large number.</p>
   </div>
 
   <!-- §5 -->
   <div class="section" id="s5">
-    <h2><span class="sec-num">5</span>Interpreting the extra factor as the cross-term</h2>
+    <h2><span class="sec-num">5</span>The discrepancy as structural analogue of the cross-term</h2>
 
-    <p>In a quadratic norm $L^2 = a^2 + b^2 + ab$, the cross-term $ab$ represents
-    the departure from orthogonality. Relative to the orthogonal norm $a^2 + b^2$,
-    the fractional correction is</p>
+    <p>The connection between the Sirag factor and the Eisenstein cross-term is a
+    <em>structural analogy</em>, not a derivation. We state it precisely.</p>
+
+    <p>In the orthogonal norm $E^2 = X^2 + Y^2$, the two contributions are
+    independent. In the Eisenstein norm $E^2 = X^2 + XY + Y^2$, the cross-term
+    $XY$ increases the total by the factor</p>
 
     <div class="eq">
-      $\displaystyle \frac{ab}{a^2 + b^2}.$
-      <span class="eq-num">(10)</span>
+      $\displaystyle \frac{X^2 + XY + Y^2}{X^2 + Y^2} = 1 + \frac{XY}{X^2 + Y^2}.$
+      <span class="eq-num">(11)</span>
     </div>
 
-    <p>When $a$ and $b$ differ by an order of magnitude (as the logarithmic components
-    of the large-number relation do), this correction is naturally of order unity.
-    The numerical value</p>
+    <p>For two positive quantities $X$ and $Y$ with $X \neq Y$, this ratio lies
+    strictly between 1 and 1.5 (the maximum occurring at $X = Y$). The Sirag
+    factor of 1.74 exceeds this range, so the identification is not exact at
+    the level of the norm ratio.</p>
 
-    <div class="result-box">
-      <div class="box-label label-accent">Cross-term identification</div>
-      <div class="eq">
-        $\displaystyle e^{0.554} \approx 1.74$
-        <span class="eq-num">(11)</span>
-      </div>
-      <p class="box-text">
-        is consistent with interpreting the Sirag factor as the Eisenstein cross-term.
-      </p>
-    </div>
+    <p>However, the analogy operates at the level of structure rather than
+    numerical identity: the Sirag discrepancy is an $\mathcal{O}(1)$ multiplicative
+    correction to a large-number coincidence, and the Eisenstein cross-term is an
+    $\mathcal{O}(1)$ multiplicative correction to a quadratic norm. Both arise from
+    departing from orthogonality. The proposal is that these two departures share
+    a common geometric origin.</p>
+
+    <p>More concretely: if we impose the exact relation $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$
+    and solve for $m_X$, we obtain $m_X / m_p = N_G / N_\alpha \approx 1.74$.
+    The question is then what physics produces this effective mass. The Eisenstein
+    geometry, through the cross-term, provides a candidate mechanism.</p>
   </div>
 
   <!-- §6 -->
   <div class="section" id="s6">
     <h2><span class="sec-num">6</span>The dark dispersion relation</h2>
 
-    <p>We propose that the modified dispersion relation</p>
+    <p>We propose that the kinematic ansatz</p>
 
     <div class="hex-box">
       <div class="box-label label-hex">Dark sector dispersion</div>
       <div class="eq">
-        $\displaystyle E^2 = p^2 c^2 + m^2 c^4 + mpc^3$
+        $\displaystyle E^2 = X^2 + XY + Y^2 = p^2 c^2 + mc^2 \!\cdot\! pc + m^2 c^4$
         <span class="eq-num">(12)</span>
       </div>
     </div>
 
     <p>applies specifically to dark matter, and not to baryonic matter.</p>
 
-    <p>The cross-term couples rest mass and spatial momentum. At rest ($p = 0$)
-    the relation reduces to $E = mc^2$. For massless particles ($m = 0$) it
-    reduces to $E = pc$. The modification appears only when both mass and
-    momentum are nonzero. It is therefore invisible to photon propagation
-    and to rest-mass measurements.</p>
+    <p>The cross-term $XY = mc^2 \cdot pc$ couples rest-mass energy and momentum
+    energy. At rest ($p = 0$, so $X = 0$) the relation reduces to $E = mc^2$.
+    For massless particles ($m = 0$, so $Y = 0$) it reduces to $E = pc$. The
+    modification appears only when both mass and momentum are nonzero: that is,
+    for massive particles in motion.</p>
 
     <p>For baryonic matter, the orthogonal dispersion relation $E^2 = p^2c^2 + m^2c^4$
-    has been tested to extraordinary precision across the full range of particle
-    physics experiments. Any cross-term for baryonic matter is excluded. The claim
-    is therefore that the Eisenstein cross-term is a property of the dark sector
-    specifically: it modifies the kinematics of massive dark particles in motion,
-    while leaving baryonic kinematics and photon propagation untouched.</p>
+    has been verified to extraordinary precision across particle physics. Any
+    cross-term for baryonic matter is excluded. The claim is therefore
+    sector-specific: the Eisenstein cross-term modifies the kinematics of massive
+    dark particles in motion, while leaving baryonic kinematics and photon
+    propagation untouched.</p>
 
-    <p>The cross-term, as shown in §3, is the geometric mean of the rest-mass energy
-    squared and the momentum energy squared. It interpolates between the two
-    regimes that baryonic physics treats as orthogonal. For dark matter, these
-    regimes are not orthogonal but coupled at $60°$.</p>
+    <p>The cross-term, as shown in §3, is the geometric mean of the rest-mass
+    energy squared and the momentum energy squared. It interpolates between the
+    two regimes that baryonic physics treats as orthogonal. For dark matter,
+    these regimes are not orthogonal but coupled at $60°$.</p>
   </div>
 
   <!-- §7 -->
   <div class="section" id="s7">
     <h2><span class="sec-num">7</span>Connection with the $A_2$ root lattice of SU(3)</h2>
 
-    <p>The root lattice of the colour gauge group SU(3) is the hexagonal $A_2$ lattice.
-    Its quadratic form is exactly</p>
+    <p>The root lattice of SU(3) is the hexagonal $A_2$ lattice. The Cartan matrix
+    of SU(3) is</p>
 
     <div class="eq">
-      $\displaystyle a^2 + ab + b^2.$
+      $\displaystyle A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}.$
       <span class="eq-num">(13)</span>
     </div>
 
-    <p>This is not a coincidence imposed from outside. The Cartan matrix of SU(3) is</p>
+    <p>The corresponding quadratic form on the root space is</p>
 
     <div class="eq">
-      $\displaystyle A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix},$
+      $\displaystyle \tfrac{1}{2}\,\mathbf{x}^T A\,\mathbf{x} = a^2 - ab + b^2.$
       <span class="eq-num">(14)</span>
     </div>
 
-    <p>and the corresponding quadratic form on the root space is
-    $\tfrac{1}{2}\mathbf{x}^T A\, \mathbf{x} = a^2 - ab + b^2$, or equivalently
-    (under the substitution $b \to -b$) the Eisenstein norm $a^2 + ab + b^2$.
-    The two forms generate the same lattice.</p>
+    <p>Under the reflection $b \to -b$ this becomes $a^2 + ab + b^2$, the Eisenstein
+    norm. The lattice generated is unchanged by this reflection: both forms
+    represent the same $A_2$ hexagonal lattice up to basis choice.</p>
 
-    <p>QCD, with gauge group SU(3)$_c$, generates the dominant contribution
-    to the proton mass via confinement at scale $\Lambda_{\rm QCD} \sim 200$ MeV.
-    A dark confining gauge sector with SU(3)-like structure would naturally
-    inherit the hexagonal geometry of the $A_2$ root lattice.</p>
+    <p>QCD, with gauge group SU(3)$_c$, generates the dominant contribution to the
+    proton mass via confinement at scale $\Lambda_{\rm QCD} \sim 200$ MeV. A dark
+    confining gauge sector with SU(3)-like structure would naturally inherit the
+    hexagonal geometry of the $A_2$ root lattice.</p>
 
     <div class="gold-box">
       <div class="box-label label-gold">Key observation</div>
       <p class="box-text">
         The Eisenstein cross-term in the dispersion relation and the hexagonal root
-        lattice of the confining gauge group share the same mathematical structure.
+        lattice of SU(3) share the same mathematical structure.
         The cross-term is not imposed <em>ad hoc</em>. It is the natural kinematic
-        consequence of a gauge symmetry whose root system is hexagonal.
+        form associated with a gauge symmetry whose root system is hexagonal.
       </p>
     </div>
   </div>
@@ -570,13 +627,13 @@
   <div class="section" id="s8">
     <h2><span class="sec-num">8</span>On Poincaré invariance</h2>
 
-    <p>The cross-term $mpc^3$ is not a Lorentz scalar. Under a boost, $m$ is invariant
-    and $p$ transforms, so the product $mp$ is not boost-invariant. The modified
-    dispersion relation therefore breaks Poincaré symmetry.</p>
+    <p>The cross-term $XY = mc^2 \cdot pc$ is not a Lorentz scalar. Under a boost,
+    $m$ is invariant but $p = |\vec{p}\,|$ is not, so $XY$ is not
+    boost-invariant. The kinematic ansatz (12) therefore breaks Poincaré symmetry.</p>
 
-    <p>This is a strong claim. Poincaré invariance sits at the foundation of
-    relativistic quantum field theory. The CPT theorem depends on it. No violation
-    has been observed in any sector, baryonic or otherwise.</p>
+    <p>This is a strong claim. Poincaré invariance is foundational to relativistic
+    quantum field theory. The CPT theorem depends on it. No violation has been
+    observed in any sector, baryonic or otherwise.</p>
 
     <div class="remark-box">
       <div class="box-label label-blue">On the status of Poincaré invariance in the dark sector</div>
@@ -586,47 +643,46 @@
         applies to quantum fields on a Poincaré-invariant background. Whether dark
         matter is described by such fields is an assumption, not a measurement.
       </p>
-      <p class="box-text" style="margin-top:12px">
-        The cross-term provides a specific, falsifiable form for a departure that would
-        be invisible to all existing tests. It vanishes for massless particles. It vanishes
-        at rest. It modifies only the kinematics of massive particles in motion within
-        a sector that interacts with baryonic matter only gravitationally. Every
-        precision test of Lorentz and CPT symmetry to date has been conducted with
-        photons, electrons, protons, neutrons, or neutrinos. None has probed the
-        dispersion relation of a particle species that does not couple to the
-        electromagnetic field.
+      <p class="box-text">
+        The ansatz (12) is not directly constrained by laboratory Lorentz tests, which
+        probe baryonic and leptonic sectors. It is, however, constrained indirectly by
+        cosmological observables: structure formation, CMB anisotropy, and limits on
+        dark matter self-interaction and free-streaming all depend on dark matter
+        kinematics. A full confrontation with cosmological data is beyond the scope
+        of this heuristic note, but would be required to establish or exclude the
+        ansatz observationally.
+      </p>
+      <p class="box-text">
+        We note that the ansatz vanishes for massless particles, vanishes at rest,
+        and preserves spatial isotropy (since $p = |\vec{p}\,|$ is
+        rotation-invariant). It breaks only boost invariance, and only for massive
+        dark particles in motion.
       </p>
     </div>
-
-    <p>Lorentz-violating dispersion relations have been studied extensively in quantum
-    gravity phenomenology, typically taking the form
-    $E^2 = p^2c^2 + m^2c^4 + \eta\, p^n / M_{\rm Pl}^{n-2}$ for integer $n$.
-    The Eisenstein form corresponds to $n = 1$ with the Planck suppression replaced
-    by $mc^2$, giving a much larger effect. But the effect is confined to a sector that
-    interacts with baryonic matter only gravitationally, placing it beyond the reach
-    of existing Lorentz-violation searches.</p>
   </div>
 
   <!-- §9 -->
   <div class="section" id="s9">
     <h2><span class="sec-num">9</span>The GeV mass scale from geometric mean construction</h2>
 
-    <p>he Sirag factor of 1.74 can be absorbed by
-    defining an effective gravitating mass scale $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$.
-    Decomposing this into baryonic and dark contributions via the mass-fraction weighted
-    geometric mean</p>
+    <p>The Sirag factor of 1.74 can be absorbed by defining an effective gravitating
+    mass scale $m_X \approx 1.74\, m_p \approx 1.6$ GeV$/c^2$. This is the mass
+    that makes the relation $2^{1/\alpha} = m_{\rm Pl}^2 / (m_e m_X)$ exact.</p>
+
+    <p>Decomposing $m_X$ into baryonic and dark contributions via the mass-fraction
+    weighted geometric mean</p>
 
     <div class="eq">
-      $\displaystyle m_X = m_p^{\,1-f}\; m_{\rm dm}^{\,f}, \qquad f = \frac{\Omega_c}{\Omega_c + \Omega_b} \approx 0.84,$
+      $\displaystyle m_X = m_p^{\,1-f}\; m_{\rm dm}^{\,f}, \qquad f \approx 0.84,$
       <span class="eq-num">(15)</span>
     </div>
 
-    <p>yields</p>
+    <p>and solving for $m_{\rm dm}$ yields</p>
 
     <div class="result-box">
-      <div class="box-label label-accent">Dark matter mass from Eisenstein geometry</div>
+      <div class="box-label label-accent">Inferred dark matter mass</div>
       <div class="eq">
-        $\displaystyle m_{\rm dm} \approx 2\;\text{GeV}/c^2.$
+        $\displaystyle m_{\rm dm} = m_p \left(\frac{m_X}{m_p}\right)^{1/f} \approx 2\;\text{GeV}/c^2.$
         <span class="eq-num">(16)</span>
       </div>
     </div>
@@ -635,24 +691,25 @@
     interpretation, it arises because the hexagonal cross-term and the confining
     gauge dynamics share a common geometric origin in the $A_2$ root lattice.</p>
 
-    <p>The justification for using $m_p$ (rather than an average over all baryon and
-    lepton species) as the baryonic mass scale is given in Appendix A.</p>
+    <p>The justification for using $m_p$ as the baryonic mass scale (rather than an
+    average over all baryon and lepton species) is given in Appendix A.</p>
   </div>
 
   <!-- §10 -->
   <div class="section" id="s10">
     <h2><span class="sec-num">10</span>Discussion</h2>
 
-    <p>The chain of reasoning is:</p>
+    <p>The chain of reasoning is as follows.</p>
 
-    <p><strong>(i)</strong> The Sirag factor $N_G / N_\alpha \approx 1.74$ is not noise.
-    It is the exponential of the cross-term contribution ($e^{0.554}$) that arises
-    when the quadratic form underlying the dispersion relation is hexagonal rather
-    than orthogonal.</p>
+    <p><strong>(i)</strong> The Sirag factor $N_G / N_\alpha \approx 1.74$ is an
+    $\mathcal{O}(1)$ multiplicative correction to a large-number coincidence.
+    The Eisenstein cross-term is an $\mathcal{O}(1)$ multiplicative correction
+    to a quadratic norm. We propose these share a common geometric origin,
+    while acknowledging this is a structural analogy rather than a derivation.</p>
 
-    <p><strong>(ii)</strong> The hexagonal quadratic form $a^2 + ab + b^2$ is the Eisenstein
-    norm, native to the $A_2$ root lattice. The cross-term $ab$ is the geometric mean
-    of the two diagonal terms: rest-mass energy squared and momentum energy squared.</p>
+    <p><strong>(ii)</strong> The hexagonal quadratic form $X^2 + XY + Y^2$ is the Eisenstein
+    norm, native to the $A_2$ root lattice. The cross-term $XY$ is the geometric
+    mean of the rest-mass energy squared and the momentum energy squared.</p>
 
     <p><strong>(iii)</strong> The $A_2$ lattice is the root lattice of SU(3). QCD, with gauge
     group SU(3)$_c$, generates the proton mass at the GeV scale via confinement. A
@@ -663,25 +720,28 @@
     fraction $f \approx 0.84$, yields $m_{\rm dm} \approx 2$ GeV, consistent with
     a dark confinement scale comparable to $\Lambda_{\rm QCD}$.</p>
 
-    <p><strong>(v)</strong> The modified dispersion relation breaks Poincaré invariance. This
-    is a strong claim, mitigated by the fact that the cross-term vanishes at rest and
-    for massless particles, and that no test of Poincaré symmetry has probed the
-    dark sector directly.</p>
+    <p><strong>(v)</strong> The kinematic ansatz breaks Poincaré symmetry. This is a strong
+    claim. It is not directly constrained by existing laboratory tests (which probe
+    only electromagnetically coupled matter), but it is indirectly constrained by
+    cosmological observables. A confrontation with structure formation data is
+    required and is beyond the scope of this note.</p>
 
     <div class="gold-box">
       <div class="box-label label-gold">Summary</div>
       <p class="box-text">
-        The Sirag factor is the Eisenstein cross-term. The Eisenstein geometry is
-        the root geometry of SU(3). The mass scale it produces is the confinement
-        scale. The cross-term is the geometric mean of the rest-mass and momentum
-        contributions to the dispersion relation. These four statements are not independent.
+        The Sirag factor is structurally analogous to the Eisenstein cross-term.
+        The Eisenstein geometry is the root geometry of SU(3).
+        The mass scale it produces is the confinement scale.
+        The cross-term is the geometric mean of the rest-mass and momentum
+        contributions to the dispersion relation.
+        These four observations are not independent.
       </p>
     </div>
 
-    <p>For a discussion of the assumptions involved in extending Lorentzian spacetime
-    and equivalence principles to non-luminous matter, see the
+    <p>For a discussion of the assumptions involved in extending equivalence
+    principles to non-luminous matter, see the
     <a class="ref-link" href="https://leelemacjames.github.io/darkMattermindMap/">Dark
-    Matter Concept Map</a>.</p>
+    Matter Concept Map</a> [6].</p>
   </div>
 
   <!-- APPENDIX A -->
@@ -689,8 +749,8 @@
     <h2><span class="app-num">A</span>Cosmological abundance justification</h2>
 
     <p>The choice of $m_p m_e$ as the mass product in the gravitational coupling
-    $\alpha_g = G m_p m_e / \hbar c$ requires justification. One might ask: why not
-    average over all baryon and lepton species? The answer is that cosmological
+    $\alpha_g = G m_p m_e / \hbar c$ requires justification. One might ask why not
+    average over all baryon and lepton species. The answer is that cosmological
     abundances select specific species overwhelmingly.</p>
 
     <h3>A.1 &ensp; Baryon abundances</h3>
@@ -698,7 +758,7 @@
     <p>At the current CMB temperature $T_{\rm CMB} \approx 2.7$ K $\approx 2.3 \times 10^{-4}$ eV,
     any baryon heavier than the nucleon is suppressed by the Boltzmann factor
     $\exp(-\Delta mc^2 / kT)$. For the lightest strange baryon ($\Lambda$, mass gap
-    $\Delta mc^2 \approx 177$ MeV above the nucleon):</p>
+    $\Delta mc^2 \approx 177$ MeV):</p>
 
     <div class="eq">
       $\displaystyle \exp\!\left(-\frac{177\;\text{MeV}}{2.3\times10^{-4}\;\text{eV}}\right)
@@ -710,16 +770,10 @@
     synthesis fixes the mixture at approximately 87.5% protons and 12.5% neutrons
     ($n_p : n_n \approx 7 : 1$).</p>
 
-    <p>The number-weighted geometric mean nucleon mass is</p>
-
-    <div class="eq">
-      $\displaystyle m_N = m_p^{\,0.875}\; m_n^{\,0.125}.$
-      <span class="eq-num">(A.2)</span>
-    </div>
-
-    <p>Since $m_n / m_p \approx 1.00138$, this gives $m_N / m_p \approx 1.00017$,
-    a correction at the level of $\mathcal{O}(10^{-4})$, which is negligible for
-    the large-number relations.</p>
+    <p>The number-weighted geometric mean nucleon mass is
+    $m_N = m_p^{0.875}\, m_n^{0.125}$. Since $m_n / m_p \approx 1.00138$,
+    this gives $m_N / m_p \approx 1.00017$, a correction at the level of
+    $\mathcal{O}(10^{-4})$, negligible for the large-number relations.</p>
 
     <h3>A.2 &ensp; Charged lepton abundances</h3>
 
@@ -727,50 +781,55 @@
     $\tau_\tau \approx 2.9 \times 10^{-13}$ s. Only electrons survive on cosmological
     timescales. Charge neutrality requires $n_e = n_p$.</p>
 
-    <p>The arithmetic and geometric means of the three charged lepton masses are:</p>
-
-    <div class="eq">
-      $\displaystyle \langle m_\ell \rangle_{\rm arith} \approx 628\;\text{MeV}
-      \approx 1228\; m_e, \qquad
-      \langle m_\ell \rangle_{\rm geom} \approx 46\;\text{MeV} \approx 90\; m_e.$
-      <span class="eq-num">(A.3)</span>
-    </div>
-
-    <p>Both are dominated by the tau mass and are far too heavy to appear in the
-    gravitational coupling at the correct order of magnitude. The electron is not
-    an "average lepton" but the only cosmologically persistent one.</p>
+    <p>For completeness: the arithmetic and geometric means of the three charged
+    lepton masses $(m_e, m_\mu, m_\tau)$ with equal weights are approximately
+    628 MeV and 46 MeV respectively. Both are far too heavy to produce the correct
+    order of magnitude in the gravitational coupling. The electron appears not
+    because it is an "average lepton" but because it is the only cosmologically
+    persistent one.</p>
 
     <h3>A.3 &ensp; Neutrino abundances</h3>
 
-    <p>The cosmic neutrino background contains $\sim 112$ neutrinos per cm$^3$ per
-    flavour ($\nu + \bar{\nu}$), giving $\sim 336$ total. These outnumber baryons
-    by a factor of $\sim 10^9$. However, neutrino masses are of order
-    $\sim 10$–$50$ meV, so the neutrino contribution to the gravitational
-    coupling is negligible compared to the nucleon-electron product.</p>
+    <p>The cosmic neutrino background contains approximately 112 neutrinos per cm$^3$
+    per flavour ($\nu + \bar{\nu}$), giving roughly 336 total [3]. These outnumber
+    baryons by a factor of order $10^9$. However, neutrino masses are of order
+    10 to 50 meV, so the neutrino contribution to any gravitational coupling
+    of the form $Gm_1 m_2 / \hbar c$ is negligible compared to the nucleon-electron
+    product.</p>
 
-    <p>Any number-weighted lepton average is dominated by neutrino masses, pushing
-    $1/\gamma$ to $\sim 10^{49}$, far from the Sirag target of $\sim 10^{41}$.
-    Any mass-weighted average is dominated by the tau, giving $\sim 10^{43}$.
-    Neither matches. The $m_p m_e$ product is selected by cosmological abundance,
-    not by convention.</p>
+    <p>A number-weighted lepton average would be dominated by neutrino masses and
+    would produce a gravitational coupling many orders of magnitude weaker than
+    the Sirag target of $\sim 10^{-41}$. A mass-weighted average would be
+    dominated by the tau and would overshoot. Neither matches. The $m_p m_e$ product
+    is selected by cosmological persistence, not by convention.</p>
 
-    <h3>A.4 &ensp; Summary of cosmological number densities</h3>
+    <h3>A.4 &ensp; Number densities and nucleon count</h3>
 
     <div class="remark-box">
-      <div class="box-label label-blue">Present-day number densities</div>
+      <div class="box-label label-blue">Present-day number densities (order of magnitude)</div>
       <p class="box-text">
-        Baryons: $n_b \approx 2.5 \times 10^{-7}$ cm$^{-3}$ (of which 87.5% protons, 12.5% neutrons)<br>
-        Electrons: $n_e \approx 2.2 \times 10^{-7}$ cm$^{-3}$ (charge neutrality with protons)<br>
-        Neutrinos: $n_\nu \approx 336$ cm$^{-3}$ (all flavours, $\nu + \bar{\nu}$)<br>
-        Neutrino/baryon ratio: $\sim 1.3 \times 10^{9}$
+        Baryons: $n_b \sim 2.5 \times 10^{-7}$ cm$^{-3}$
+        (of which $\sim$87.5% protons, $\sim$12.5% neutrons) [3]
+      </p>
+      <p class="box-text">
+        Electrons: $n_e \sim 2.2 \times 10^{-7}$ cm$^{-3}$
+        (charge neutrality with protons)
+      </p>
+      <p class="box-text">
+        Neutrinos: $n_\nu \sim 336$ cm$^{-3}$
+        (all flavours, $\nu + \bar{\nu}$) [3]
+      </p>
+      <p class="box-text">
+        Neutrino-to-baryon ratio: $\sim 1.3 \times 10^{9}$
       </p>
     </div>
 
-    <p>The number of baryons in the observable universe is $N_{\rm baryons} \approx 10^{80}$,
-    giving $\sqrt{N} \approx 10^{40}$, which is the original Dirac large-number coincidence.
-    Including dark matter ($\Omega_m \approx 0.315$) pushes $N_{\rm total} \approx 6.4 \times 10^{80}$
-    in proton-mass equivalents, giving $\sqrt{N} \approx 2.5 \times 10^{40}$. The traditional
-    $10^{40}$ holds well for baryonic matter alone.</p>
+    <p>The number of baryons in the observable universe is $N_{\rm baryons} \sim 10^{80}$,
+    giving $\sqrt{N} \sim 10^{40}$: the original Dirac large-number coincidence.
+    Including dark matter ($\Omega_m \approx 0.315$) gives
+    $N_{\rm total} \sim 6 \times 10^{80}$ in proton-mass equivalents, so
+    $\sqrt{N_{\rm total}} \sim 2.5 \times 10^{40}$. The traditional $\sim 10^{40}$
+    holds well for baryonic matter alone.</p>
   </div>
 
   <!-- REFERENCES -->
@@ -802,14 +861,14 @@
     </p>
     <p class="ref-item">
       <span class="ref-num">[6]</span>
-      Interactive overview of dark matter and equivalence assumptions.
+      McCulloch-James, L. (2025). Interactive overview of dark matter and equivalence assumptions.
       <a href="https://leelemacjames.github.io/darkMattermindMap/">
       leelemacjames.github.io/darkMattermindMap</a>
     </p>
   </div>
 
   <div class="footer">
-    <p>Typeset from LaTeX source · KaTeX rendering</p>
+    <p>KaTeX rendering</p>
   </div>
 
 </div>
@@ -826,3 +885,4 @@
 
 </body>
 </html>
+
